@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000); 
 });
 
-
 //Make sure thetside
 document.addEventListener('click', (event) => {
     // Check if the click is outside the scheduleBar and it's open
