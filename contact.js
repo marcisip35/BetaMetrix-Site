@@ -5,6 +5,8 @@ const typeOfContact = document.querySelector("#typeOfContact");
 const contentDivider = document.querySelector("#contentDivider");
 const appointmentForm = document.querySelector("#appointmentForm");
 const questionForm = document.querySelector("#questionForm");
+const contentForm = document.querySelector("#contentForm");
+
 buttonFunctionality();
 
 function buttonFunctionality() {
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to handle the scroll event and check if the element is within the middle window
     const handleScroll = () => {
-        const elements = document.querySelectorAll('#appointmentForm, #questionForm, #contactInfo .item');
+        const elements = document.querySelectorAll('#contentForm, #questionForm, #contactInfo .item');
 
         elements.forEach(element => {
             if (isInMiddleWindow(element)) {

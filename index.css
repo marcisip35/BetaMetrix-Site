@@ -6,14 +6,14 @@
     overflow-y: hidden;
 }
 
-/* Loading */
+/* Style for the loading overlay */
 #loadingOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    background: #000; /* Solid black background to completely hide the content */
     color: white;
     display: flex;
     justify-content: center;
@@ -22,12 +22,12 @@
     z-index: 9999; /* Ensure it's on top of everything */
 }
 
-/* Loading timer style */
-#loadingTimer {
-    animation: fadeinout 1s linear infinite;
+/* Loading message style */
+#loadingMessage {
+    animation: fadeinout 1s linear infinite; /* Fade-in and fade-out effect */
 }
 
-/* Fade-in effect for the timer message */
+/* Fade-in effect for the loading message */
 @keyframes fadeinout {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }

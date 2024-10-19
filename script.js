@@ -16,30 +16,29 @@ const html = document.documentElement;
 //Make sure all the videos are loaded properly
 document.addEventListener("DOMContentLoaded", function () {
     const videos = document.querySelectorAll('video');
-    const loadingTimer = document.getElementById('loadingTimer');
     const loadingOverlay = document.getElementById('loadingOverlay');
+    const loadingMessage = document.getElementById('loadingMessage');
     let loadedVideos = 0;
-    let countdown = 5;
+    let countdown = 5; // Starting value for the countdown
 
     // Function to check if all videos are loaded
     function checkAllVideosLoaded() {
         if (loadedVideos === videos.length) {
             // All videos are loaded, hide the loading overlay and show the body
-            document.body.style.display = 'block';
             loadingOverlay.style.display = 'none';
+            document.body.style.display = 'block';
         }
     }
 
     // Update countdown every second
-    const countdownInterval = setInterval(function() {
-        countdown--;
-        loadingTimer.textContent = `Loading... ${countdown}`;
-        
-        // Hide the overlay and stop countdown when it reaches zero
+    const countdownInterval = setInterval(function () {
+        countdown--; // Decrement the countdown
+        loadingMessage.textContent = `Loading... ${countdown}`; // Update the message
+
         if (countdown <= 0) {
-            clearInterval(countdownInterval);
-            document.body.style.display = 'block';
-            loadingOverlay.style.display = 'none';
+            clearInterval(countdownInterval); // Stop the countdown interval
+            loadingOverlay.style.display = 'none'; // Hide the overlay
+            document.body.style.display = 'block'; // Show the body
         }
     }, 1000); // Update every second
 

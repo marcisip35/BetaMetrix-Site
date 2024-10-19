@@ -1,4 +1,239 @@
 /* Main Content */
 #mainContent{
-    height: 1100px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
+
+#mainContent svg{
+    width: 60px;
+    height: 60px;
+}
+
+#mainContent .item:nth-child(1){
+    width: 100%;
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#mainContent .item:nth-child(1) h1{
+    font-size: 120px;
+    font-weight: 400;
+}
+
+#mainContent .item:nth-child(1) p{
+    width: 900px;
+    text-align: center;
+    opacity: 0.4;
+    font-size: 40px;
+}
+
+#mainContent .item:nth-child(2){
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mainContent .item:nth-child(2) p {
+    font-size: 20px;
+    width: 45%;
+    position: relative;
+    padding: 20px;
+    border: 2px solid transparent; /* Start with a transparent border */
+    transition: all 0.4s ease;
+}
+
+#mainContent .item:nth-child(2) p::before,
+#mainContent .item:nth-child(2) p::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: all 0.4s ease;
+}
+
+#mainContent .item:nth-child(2) p::before {
+    top: 0;
+    left: 0;
+}
+
+#mainContent .item:nth-child(2) p::after {
+    bottom: 0;
+    right: 0;
+}
+
+#mainContent .item:nth-child(2) p:hover {
+    border-color: black; /* Border becomes visible on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+#mainContent .item:nth-child(2) p:hover::before {
+    width: 100%; /* Top border slides in */
+}
+
+#mainContent .item:nth-child(2) p:hover::after {
+    width: 100%; /* Bottom border slides in */
+}
+
+#mainContent .item:nth-child(3){
+    width: 100%;
+}
+
+#mainContent .item:nth-child(3) img{
+    width: 100%;
+}
+
+#mainContent .item:nth-child(4){
+    width: 100%;
+    margin-bottom: 200px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.aboutUsCard {
+    width: 30%;
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    padding: 20px;
+    border: 2px solid transparent; /* Start with a transparent border */
+    transition: all 0.4s ease;
+}
+
+.aboutUsCard::before,
+.aboutUsCard::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: all 0.4s ease;
+}
+
+.aboutUsCard::before {
+    top: 0;
+    left: 0;
+}
+
+.aboutUsCard::after {
+    bottom: 0;
+    right: 0;
+}
+
+.aboutUsCard:hover {
+    border-color: black; /* Border becomes visible on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.aboutUsCard:hover::before {
+    width: 100%; /* Top border slides in */
+}
+
+.aboutUsCard:hover::after {
+    width: 100%; /* Bottom border slides in */
+}
+
+/* Smaller Monitors */
+@media (max-width: 1400px){
+    #mainContent .item:nth-child(1) h1{
+        font-size: 80px;
+    }
+
+    #mainContent .item:nth-child(1) p {
+        font-size: 30px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        font-size: 16px;
+    }
+
+    .aboutUsCard {
+        font-size: 16px;
+    }
+
+    #mainContent .item:nth-child(4){
+        margin-bottom: 100px;
+    }
+}
+
+/* Laptops */
+@media(max-width: 1100px){
+    #mainContent{
+        gap: 30px;
+    }
+
+    #mainContent .item:nth-child(1){
+        margin-top: 50px;
+    }
+
+    #mainContent .item:nth-child(1) h1{
+        font-size: 60px;
+    }
+
+    #mainContent .item:nth-child(1) p {
+        font-size: 20px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        font-size: 14px;
+    }
+
+    .aboutUsCard {
+        font-size: 14px;
+    }
+
+    #mainContent .item:nth-child(4){
+        margin-bottom: 50px;
+    }
+}
+
+/* Mobile */
+@media(max-width: 900px){
+    #mainContent{
+        gap: 20px;
+    }
+
+    #mainContent .item:nth-child(1) h1{
+        font-size: 40px;
+    }
+
+    #mainContent .item:nth-child(1) p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        padding: 5px;
+        width: 50%;
+        font-size: 8px;
+    }
+
+    #mainContent .item:nth-child(4){
+        flex-direction: column;
+    }
+
+    .aboutUsCard {
+        width: 100%;
+        font-size: 8px;
+    }
+
+    #mainContent svg{
+        width: 30px;
+        height: 30px;
+    }
+}
+

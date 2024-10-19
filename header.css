@@ -76,6 +76,11 @@ nav a:hover{
 }
 
 @media (max-width: 900px){
+    .sidePaddings{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
     header{
         flex-direction: column;
     }
