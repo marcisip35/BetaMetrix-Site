@@ -1,0 +1,268 @@
+/* Main Content */
+#mainContent {
+    width: 100vw;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+#contentForm {
+    width: 900px;
+    height: 1300px;
+
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-out;
+}
+
+#contentForm:hover {
+    box-shadow: 0px 0px 28px 0px rgba(147, 147, 147, 0.75);
+    transform: scale(1.02);
+}
+
+#contentHeader {
+    width: 100%;
+    height: 22%;
+    background-color: black;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+#selectButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#consultationButton,
+#questionButton {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    border: none;
+    border-radius: 24px;
+    font-weight: 600;
+    background-color: var(--mainColor);
+    color: white;
+    cursor: pointer;
+}
+
+#consultationButton {
+    background-color: var(--hoverColor);
+}
+
+#contentDivider {
+    width: 100%;
+    height: 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 70px;
+    font-size: 20px;
+}
+
+#appointmentForm,
+#questionForm {
+    width: 100%;
+    padding: 70px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#appointmentForm label,
+#questionForm label {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--secondaryColor);
+}
+
+#appointmentForm input,
+#questionForm input {
+    height: 60px;
+    font-size: 30px;
+    font-weight: 600;
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    margin-bottom: 40px;
+    padding-left: 6px;
+}
+
+#specialty {
+    border: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    opacity: 0.5;
+    font-size: 18px;
+    font-weight: 600;
+    height: 50px;
+}
+
+#message {
+    opacity: 0.5;
+    height: 120px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+#appointmentFormSubmit,
+#questionFormSubmit {
+    height: 50px;
+    width: 200px;
+    border-radius: 32px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+#appointmentFormSubmit:hover,
+#questionFormSubmit:hover {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+}
+
+#questionForm {
+    display: none;
+}
+
+#contactInfo {
+    width: 900px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#contactInfo .item a {
+    font-size: 18px;
+}
+
+#contactLocation {
+    width: 100%;
+}
+
+#contactInfo .item {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+#contactInfo .item:hover {
+    box-shadow: 0px 0px 28px 0px rgba(107, 107, 107, 0.75);
+    transform: scale(1.02);
+}
+
+#contactLocation iframe {
+    width: 100%;
+    box-shadow: 0px 0px 28px 0px rgba(107, 107, 107, 0.75);
+    border-radius: 16px;
+}
+
+/* Mobile Query */
+@media (max-width: 1100px) {
+    #mainContent {
+        margin: 0px;
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* Hover-like effect when centered in view */
+    .centered-in-view {
+        box-shadow: 0px 0px 28px 0px rgba(147, 147, 147, 0.75);
+        transform: scale(1.02);
+    }
+
+    #mainContent {
+        padding: 0px;
+    }
+
+    #contentForm {
+        height: 900px;
+        width: 98vw;
+    }
+
+    #contentHeader {
+        height: 20%;
+        padding-left: 30px;
+    }
+
+    #consultationButton,
+    #questionButton {
+        font-size: 14px;
+    }
+
+    #typeOfContact {
+        font-size: 20px;
+    }
+
+    #contentDivider {
+        height: 10%;
+        font-size: 14px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #appointmentForm,
+    #questionForm {
+        height: 70%;
+        padding: 30px;
+    }
+
+    #appointmentForm label,
+    #questionForm label {
+        font-size: 16px;
+    }
+
+    #appointmentForm input,
+    #questionForm input {
+        font-size: 16px;
+    }
+
+    #message {
+        height: 50px;
+    }
+
+    #appointmentFormSubmit,
+    #questionFormSubmit {
+        margin-bottom: 10px;
+        width: 150px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    #contactInfo .item {
+        width: 95vw;
+    }
+
+    #contactLocation iframe {
+        height: 300px;
+    }
+}

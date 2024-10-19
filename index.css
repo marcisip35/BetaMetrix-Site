@@ -1,0 +1,2178 @@
+.mobileVideoBackground {
+    pointer-events: none;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+/* Loading */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 9999; /* Ensure it's on top of everything */
+}
+
+/* Loading timer style */
+#loadingTimer {
+    animation: fadeinout 1s linear infinite;
+}
+
+/* Fade-in effect for the timer message */
+@keyframes fadeinout {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+
+/* Header */
+header {
+    height: 100vh;
+    min-height: 600px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+    background: linear-gradient(to bottom, #ecebea 0%, #ffffff 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header .item:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+}
+
+#logo {
+    width: 50%;
+    font-size: 4vw;
+    color: var(--mainColor);
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    animation: slideDown 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+#logo a {
+    color: var(--mainColor);
+}
+
+@keyframes slideDown {
+    0% {
+        top: -100px;
+        /* Initial position */
+        opacity: 0;
+        /* Invisible */
+    }
+
+    100% {
+        top: 0;
+        /* End position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+nav {
+    width: 42%;
+    letter-spacing: 0.5px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    position: relative;
+    top: -100px;
+    /* Start off the screen */
+    opacity: 0;
+    /* Initially invisible */
+    animation: slideDownNav 1.5s ease-out forwards;
+    /* Trigger animation */
+    animation-delay: 1s;
+}
+
+@keyframes slideDownNav {
+    0% {
+        top: -100px;
+        /* Initial position */
+        opacity: 0;
+        /* Invisible */
+    }
+
+    100% {
+        top: 0;
+        /* End position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+.headerLink {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    position: relative;
+}
+
+.headerLink:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    height: 2px;
+    width: 0;
+    background-color: var(--hoverColor);
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.headerLink:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav .left {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+nav .right {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+#scheduleLink,
+#dropdownLink {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#scheduleLink:hover rect,
+#dropdownLink:hover rect {
+    fill: var(--secondaryColor);
+}
+
+#scheduleBar {
+    width: 43%;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 101%;
+    top: 0;
+    box-shadow: -1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease;
+}
+
+#scheduleBar.open {
+    left: 57%;
+}
+
+#scheduleBar h1 {
+    color: white;
+    font-size: 42px;
+}
+
+#scheduleBar .item:nth-child(1) {
+    height: 25%;
+    min-height: 250px;
+    width: 100%;
+    background-color: var(--mainColor);
+    padding: 30px;
+    padding-left: 50px;
+    padding-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#scheduleBar .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#consultationButton {
+    background-color: var(--hoverColor);
+}
+
+#questionButton {
+    background-color: black;
+}
+
+#consultationButton,
+#questionButton {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    border: none;
+    border-radius: 24px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.closeButton {
+    color: black;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.closeButton:hover svg rect {
+    fill: var(--secondaryColor);
+}
+
+#scheduleBar .item:nth-child(2) {
+    height: 75%;
+    width: 100%;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#scheduleBar .item:nth-child(2) p {
+    padding-left: 50px !important;
+}
+
+#appointmentForm {
+    min-height: 650px;
+    background-color: white;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-right: 30px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#questionForm {
+    min-height: 650px;
+    background-color: white;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-right: 30px;
+    overflow-y: auto;
+
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#scheduleBar .item:nth-child(2) p {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 46px;
+}
+
+#scheduleBar label {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--secondaryColor);
+}
+
+#scheduleBar input {
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    padding-left: 3px;
+    margin-bottom: 30px;
+}
+
+#specialty {
+    border: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    opacity: 0.5;
+    font-size: 18px;
+    font-weight: 600;
+    height: 30px;
+}
+
+#message {
+    height: 30px;
+    font-size: 20px;
+    padding: 3px;
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid var(--secondaryColor);
+    resize: none;
+}
+
+#appointmentSubmit,
+#questionSubmit {
+    height: 40px;
+    width: 160px;
+    border-radius: 32px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+
+#appointmentSubmit:hover,
+#questionSubmit:hover {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+}
+
+#dropdownBar {
+    width: 43%;
+    height: 100vh;
+    position: fixed;
+    padding: 30px;
+    padding-top: 50px;
+    left: 101%;
+    top: 0;
+    background-color: var(--mainColor);
+    box-shadow: -1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding-left: 50px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#dropdownBar.open {
+    left: 57%;
+}
+
+#dropdownBar h1 {
+    font-size: 40px;
+    color: white;
+    margin-top: 20px;
+}
+
+#dropdownBar p {
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    font-weight: 200;
+    position: relative;
+}
+
+#dropdownBar p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--hoverColor);
+    transition: width 0.3s ease-out;
+}
+
+#dropdownBar p:hover::after {
+    width: 100%;
+}
+
+header .item:nth-child(2) {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#softwareIllustrations {
+    width: 50%;
+}
+
+#softwareVideo {
+    border: 1px solid black;
+    margin-top: 50px;
+    width: 100%;
+    border-radius: 16px;
+    height: auto;
+    object-fit: cover;
+    /* Ensures the video covers the entire space while maintaining aspect ratio */
+}
+
+#softwareVideo:hover {
+    box-shadow: 0px 0px 20px 10px rgb(199, 199, 199);
+
+}
+
+#rightSideIllustrations {
+    width: 42%;
+    font-size: 30px;
+    padding-top: 50px;
+
+    display: flex;
+    justify-content: flex-start;
+    animation: rightSideIllustrationsAnimation 2s ease-in forwards;
+}
+
+@keyframes rightSideIllustrationsAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+header .item:nth-child(3) {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#softwareLink {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--mainColor);
+    cursor: pointer;
+
+    opacity: 0;
+    /* Initially invisible */
+    transform: translateY(20px);
+    /* Optional: start slightly below */
+    animation: fadeIn 1s ease-out forwards;
+    /* Trigger animation */
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Start from below */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* End in place */
+    }
+}
+
+#softwareLink:hover {
+    color: var(--secondaryColor);
+}
+
+#bookLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+
+    opacity: 0;
+    /* Initially invisible */
+    transform: translateY(20px);
+    /* Optional: start slightly below */
+    animation: fadeInBookLinks 1s ease-out forwards;
+    /* Trigger animation */
+    animation-delay: 1s;
+}
+
+@keyframes fadeInBookLinks {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Start from below */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* End in place */
+    }
+}
+
+#bookLinks button {
+    height: 60px;
+    width: 250px;
+    background-color: var(--mainColor);
+    color: white;
+    text-decoration: none;
+    border-radius: 32px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+}
+
+#bookLinks button:hover {
+    background-color: transparent;
+    border: 3px solid var(--mainColor);
+    color: var(--mainColor);
+}
+
+/* About Us */
+#aboutUs {
+    padding-top: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 100px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#aboutUs .left {
+    width: 40%;
+}
+
+#aboutUs .right {
+    width: 60%;
+    padding-right: 200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+#aboutUs h1 {
+    font-size: 100px;
+}
+
+#aboutUs a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#aboutUs a:hover {
+    color: var(--secondaryColor);
+}
+
+#aboutUs .item:nth-child(1) {
+    font-size: 60px;
+    font-weight: 700;
+
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#aboutUs .item:nth-child(1).visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* End in place */
+}
+
+#aboutUs .item:nth-child(2),
+#aboutUs .item:nth-child(3) {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#aboutUs .item:nth-child(2).visible,
+#aboutUs .item:nth-child(3).visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* End in place */
+}
+
+#aboutUs .item:nth-child(2).visible p,
+#aboutUs .item:nth-child(3).visible p {
+    opacity: 0.6;
+}
+
+/* Services */
+#featuredServices {
+    height: 1000px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#featuredServices .item {
+    width: calc(100% / 3);
+    /* Divide into three columns */
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 70px;
+    padding-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    opacity: 0;
+    /* Initially invisible */
+    transform: translateY(40px);
+    /* Start slightly below */
+    transition: opacity 1s ease-out, transform 0.5s ease-out;
+    /* Smooth transition */
+}
+
+#featuredServices .item.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Final position */
+}
+
+#featuredServices h1 {
+    font-size: 50px;
+    color: white;
+}
+
+#featuredServices p {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+#featuredServices a {
+    text-decoration: none;
+}
+
+#medicalBillingServices {
+    height: 60px;
+    width: 300px;
+    color: white;
+    border: 1px solid white;
+    font-weight: 600;
+    border-radius: 32px;
+    font-size: 20px;
+
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease-in-out;
+}
+
+#medicalBillingServices::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: white;
+    transition: width 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#medicalBillingServices:hover::after {
+    width: 100%;
+}
+
+#medicalBillingServices:hover {
+    color: var(--mainColor);
+}
+
+#rcmImage {
+    margin-left: auto;
+    margin-right: auto;
+    width: 240px;
+}
+
+#medicalCredentialingImage {
+    margin-left: auto;
+    margin-right: auto;
+    width: 210px;
+}
+
+#featuredServices .item:nth-child(1) {
+    background-color: var(--mainColor);
+}
+
+#rcmServicesLink,
+#medicalCredentialingLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#featuredServices .item:nth-child(2) {
+    background-color: var(--secondaryColor);
+}
+
+#featuredServices .item:nth-child(3) {
+    background-color: var(--hoverColor);
+}
+
+#rcmServicesP,
+#medicalCredentialingP {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: opacity 0.5s ease, max-height 1s ease, visibility 0.5s ease;
+}
+
+#rcmServicesLink.show #rcmServicesP,
+#medicalCredentialingLink.show #medicalCredentialingP {
+    opacity: 1;
+    max-height: 200px;
+    visibility: visible;
+}
+
+/* Systems */
+#systems {
+    width: 100vw;
+    margin-top: 100px;
+    margin-bottom: 300px;
+}
+
+#systems .item {
+    width: 100%;
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+#systems .item .top {
+    width: 1000px;
+    height: 20%;
+    text-align: center;
+    color: black;
+    padding-right: 50px;
+    padding-left: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#systems a {
+    opacity: 0.8;
+    color: black;
+    text-decoration: none;
+}
+
+#systems a:hover {
+    opacity: 1;
+    color: black;
+}
+
+#systems h1 {
+    font-size: 60px;
+}
+
+#systems p {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#systems .item .bottom {
+    width: 1400px;
+    height: 100%;
+    box-shadow: 5px 1px 9px rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#systemsScreen {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+}
+
+.softwareLogo {
+    width: 500px;
+    margin-bottom: 20px;
+    animation: scrollDown 60s linear infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(50px);
+        /* Start at the top */
+    }
+
+    100% {
+        transform: translateY(-5931px);
+        /* Move down by the height of the container */
+    }
+}
+
+#systemsList {
+    width: 50%;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: var(--mainColor);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#systemsListInfo {
+    width: 100%;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#systemsListDropdown {
+    width: 70%;
+    height: 25%;
+    margin-left: auto;
+    padding: 20px;
+    background-color: var(--secondaryColor);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#systemsListDropdown p {
+    font-size: 12px;
+    color: white;
+    opacity: 0.7;
+}
+
+#systemsListDropdown a {
+    position: relative;
+    width: 250px;
+    padding: 10px;
+    border-radius: 32px;
+    font-size: 14px;
+    border: 1px solid white;
+    color: white;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+#systemsListDropdown a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: width 0.7s ease;
+    z-index: -1;
+}
+
+#systemsListDropdown a:hover::before {
+    width: 100%;
+}
+
+#systemsListDropdown a:hover {
+    color: black;
+}
+
+/* Services */
+#services {
+    width: 100%;
+    height: 800px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#servicesTitle {
+    text-align: center;
+    font-size: 80px;
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+#services .item {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#services img {
+    height: 450px;
+}
+
+#services .item h1 {
+    margin-top: auto;
+    color: var(--mainColor);
+    font-size: 40px;
+}
+
+#services .item p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Why Choose Us */
+.whyChooseUs {
+    position: relative;
+    height: 1100px;
+    overflow: hidden;
+    margin-bottom: 100px;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Slightly offset */
+    transition: opacity 1s ease, transform 1s ease;
+    /* Smooth transition */
+}
+
+.whyChooseUs.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Reset to normal position */
+}
+
+.videoBackground {
+    top: 35%;
+    left: 50%;
+    width: 80%;
+    height: 65%;
+    border-radius: 16px;
+    position: absolute;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* Ensures the video stays behind the content */
+}
+
+.whyChooseUsVideo {
+    width: 100%;
+    top: 27%;
+    color: white;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.whyChooseUsVideo a {
+    color: white;
+    height: 35px;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid white;
+    opacity: 0.8;
+    border-radius: 8px;
+    font-size: 15px;
+
+    display: grid;
+    place-items: center;
+}
+
+.whyChooseUsVideo a:hover {
+    background-color: white;
+    color: black;
+    opacity: 0.7;
+}
+
+.whyChooseUs h1 {
+    font-size: 70px;
+}
+
+.whyChooseUs h2 {
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+}
+
+.whyChooseUsImage {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    background-color: white;
+    box-shadow: 10px 3px 18px -8px rgba(0, 0, 0, 0.75);
+    border-radius: 16px;
+    padding: 1px;
+}
+
+.whyChooseUsText {
+    position: absolute;
+    left: 32%;
+    top: 80%;
+    width: 35%;
+    height: 20%;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.whyChooseUs .bottom {
+    margin-top: 40px;
+}
+
+.whyChooseUs .bottom :nth-child(1) {
+    font-size: 16px;
+    text-decoration: none;
+    background-color: black;
+    margin-right: 10px;
+    padding: 16px;
+    border-radius: 16px;
+    color: white;
+}
+
+.whyChooseUs .bottom :nth-child(1):hover {
+    background-color: var(--secondaryColor);
+}
+
+.whyChooseUs .bottom :nth-child(2) {
+    font-size: 16px;
+    text-decoration: none;
+    background-color: white;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgb(207, 207, 207);
+    color: black;
+}
+
+.whyChooseUs .bottom :nth-child(2):hover {
+    background-color: rgb(207, 207, 207);
+}
+
+/* Client Testimonials */
+#clientTestimonials {
+    width: 100%;
+    height: 800px;
+    margin-bottom: 100px;
+    padding: 50px;
+    padding-left: 250px;
+    padding-right: 60px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+#clientTestimonials .item:nth-child(1) {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#clientTestimonials .item:nth-child(1) h1 {
+    font-size: 45px;
+}
+
+#clientTestimonials .item:nth-child(1) p {
+    font-size: 20px;
+}
+
+#clientTestimonials .item:nth-child(1) a {
+    height: 60px;
+    width: 250px;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 16px;
+    color: white;
+    font-weight: 600;
+    display: grid;
+    place-items: center;
+}
+
+#clientTestimonials .item:nth-child(1) a:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+#testimonialCardButtons {
+    margin-top: auto;
+    margin-left: auto;
+    padding-right: 50px;
+}
+
+.cardButton {
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.cardButton:hover svg rect {
+    fill: rgb(225, 225, 225);
+}
+
+#clientTestimonials .item:nth-child(2) {
+    height: 100%;
+    width: 65%;
+    padding-right: 15px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.testimonialCard {
+    flex: 0 0 450px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 10px 6px 14px -4px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonialLogo {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.testimonialPicture {
+    border-radius: 50%;
+    box-shadow: 4px 2px 10px 1px rgb(174, 174, 174);
+    margin-top: auto;
+    width: 70px;
+}
+
+.testimonialName {
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+/* Company Metrics */
+#companyMetrics {
+    width: 100%;
+    height: 800px;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#companyMetrics .item {
+    width: 30%;
+    height: 80%;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metricsTitle {
+    opacity: 0.4;
+    margin-bottom: 60px;
+}
+
+#companyMetrics .item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#companyMetrics .item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#companyMetrics .item .metricsVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: transform 1s ease;
+    /* Add transition for smooth effect */
+}
+
+#companyMetrics .item:hover .metricsVideo {
+    transform: scale(1.1);
+}
+
+#companyMetrics .metricsInfo {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+#companyMetrics .metricsInfo h1 {
+    font-size: 4em;
+}
+
+#companyMetrics .metricsInfo h2 {
+    font-size: 1.5em;
+}
+
+/* Contact Us */
+#contactUs {
+    width: 100%;
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#contactUs .item:nth-child(1) {
+    height: 50%;
+    background-color: black;
+
+
+    display: flex;
+    flex-direction: row;
+}
+
+#getInTouchText {
+    width: 50%;
+    color: white;
+    padding-top: 50px;
+    padding-left: 250px;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#getInTouchImage {
+    width: 50%;
+    background-image: url(./assets/contactUsImage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom-left-radius: 400px;
+}
+
+#contactUs .item:nth-child(2) {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+#getInTouchInfo,
+#getInTouchBook {
+    position: absolute;
+    font-size: 18px;
+    width: 600px;
+    background-color: white;
+    box-shadow: 0px 4px 15px rgb(129, 129, 129);
+    padding: 50px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#getInTouchInfo {
+    top: -20%;
+    left: 10%;
+}
+
+#getInTouchBook {
+    top: -20%;
+    right: 10%;
+}
+
+#contactUs .item:nth-child(2) {
+    height: 50%;
+}
+
+/* Book Now */
+#bookNow {
+    width: 100%;
+    height: 1000px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#bookNow .item {
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+#bookNow .item h1 {
+    font-size: 3vw;
+}
+
+#bookNow .item a {
+    font-size: 30px;
+    text-decoration: none;
+    border: 1px solid gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 32px;
+    font-weight: 600;
+    color: gray;
+}
+
+#bookNow .item a:hover {
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Media Queries */
+@media (max-width: 1700px) {
+
+    #scheduleBar,
+    #dropdownBar {
+        width: 45%;
+    }
+
+    #scheduleBar.open,
+    #dropdownBar.open {
+        left: 55%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .headerLink {
+        font-size: 22px;
+    }
+
+    nav svg {
+        width: 55px;
+    }
+
+    #aboutUs .right {
+        padding-right: 150px;
+    }
+
+    #getInTouchInfo,
+    #getInTouchBook {
+        width: 520px;
+    }
+}
+
+@media(max-width: 1500px) {
+    .headerLink {
+        font-size: 19px;
+    }
+
+    nav svg {
+        width: 45px;
+    }
+
+    #bookLinks button {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    #softwareLink {
+        font-size: 30px;
+    }
+
+    #aboutUs .right {
+        padding-right: 100px;
+    }
+
+    #systems .item .bottom {
+        width: 1300px;
+    }
+}
+
+@media(max-width: 1400px) {
+    .headerLink {
+        font-size: 17px;
+    }
+
+    nav svg {
+        width: 40px;
+    }
+
+    nav {
+        gap: 70px;
+    }
+
+    #softwareLink {
+        font-size: 25px;
+    }
+
+    #scheduleBar h1 {
+        font-size: 31px;
+    }
+
+    #scheduleBar .item:nth-child(2) p {
+        font-size: 16px;
+    }
+
+    #consultationButton,
+    #questionButton {
+        height: 35px;
+        width: 130px;
+        font-size: 14px;
+    }
+
+    .closeButton {
+        width: 50px;
+        height: 50px;
+    }
+
+    #appointmentSubmit,
+    #questionSubmit {
+        height: 40px;
+        width: 160px;
+        font-size: 16px;
+    }
+
+    #dropdownBar h1 {
+        font-size: 35px;
+    }
+
+    #dropdownBar p {
+        font-size: 22px;
+    }
+
+    #rightSideIllustrations {
+        font-size: 18px;
+    }
+
+    #aboutUs h1 {
+        font-size: 70px;
+    }
+
+    #aboutUs .right {
+        padding-right: 50px;
+    }
+
+    #aboutUs .item:nth-child(1) {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    #aboutUs .item:nth-child(2),
+    #aboutUs .item:nth-child(3) {
+        font-size: 18px;
+    }
+
+    #featuredServices h1 {
+        font-size: 35px;
+    }
+
+    #featuredServices p {
+        font-size: 18px;
+    }
+
+    #medicalBillingServices {
+        height: 50px;
+        width: 260px;
+        font-size: 18px;
+    }
+
+    #systems .item .bottom {
+        width: 1200px;
+    }
+
+    #systemsScreen {
+        width: 55%;
+    }
+
+    #systemsList {
+        width: 45%;
+    }
+
+    #servicesTitle {
+        font-size: 70px;
+    }
+
+    #systemsList {
+        font-size: 18px;
+    }
+
+    #services img {
+        height: 400px;
+    }
+
+    #services .item h1 {
+        font-size: 30px;
+    }
+
+    #services .item p {
+        font-size: 16px;
+    }
+
+    .whyChooseUsText {
+        font-size: 19px;
+    }
+
+    .whyChooseUs .bottom :nth-child(1),
+    .whyChooseUs .bottom :nth-child(2) {
+        font-size: 14px;
+    }
+
+    #clientTestimonials .item:nth-child(1) h1 {
+        font-size: 35px;
+    }
+
+    #clientTestimonials .item:nth-child(1) p {
+        font-size: 16px;
+    }
+
+    #clientTestimonials .item:nth-child(1) a {
+        height: 55px;
+        width: 225px;
+    }
+
+    .testimonialCard {
+        flex: 0 0 400px;
+        height: 550px;
+        font-size: 14px;
+    }
+
+    .testimonialLogo {
+        width: 160px;
+    }
+
+    #getInTouchInfo,
+    #getInTouchBook {
+        width: 420px;
+    }
+}
+
+@media(max-width: 1300px) {
+    nav {
+        gap: 60px;
+    }
+
+    .headerLink {
+        font-size: 13px;
+    }
+
+    nav .right {
+        gap: 10px;
+    }
+
+    #bookLinks button {
+        height: 50px;
+        width: 170px;
+        font-size: 14px;
+    }
+
+    #systems .item .bottom {
+        width: 1000px;
+    }
+
+    #clientTestimonials .item:nth-child(2) {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    #clientTestimonials .item:nth-child(2)::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media(max-width:1100px) {
+
+    nav,
+    #logo {
+        padding-top: 10px;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    header .item:nth-child(2) {
+        flex-direction: column;
+    }
+
+    #rightSideIllustrations {
+        width: 100%;
+    }
+
+    #scheduleBar.open,
+    #dropdownBar.open {
+        left: 40%;
+    }
+
+    #scheduleBar,
+    #dropdownBar {
+        width: 60%;
+    }
+
+    #aboutUs {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    #aboutUs .left,
+    #aboutUs .right {
+        width: 90%;
+    }
+
+    #featuredServices {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #featuredServices .item {
+        height: 1000px;
+        width: 100%;
+    }
+
+    #featuredServices .item:nth-child(1) {
+        height: 100%;
+    }
+
+    #rcmServicesP,
+    #medicalCredentialingP {
+        opacity: 1;
+        max-height: 200px;
+        visibility: visible;
+    }
+
+    #systems{
+        width: 100vw;
+        display: grid;
+        place-items: center;
+    }
+
+    #systems .item {
+        width: 94%;
+        height: 900px;
+    }
+
+    #systems .item .top{
+        width: 100%;
+    }
+
+    #systems .item .bottom {
+        width: 100%;
+        flex-direction: column;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    #systemsScreen {
+        width: 100%;
+        height: 50%;
+    }
+
+    #systemsList {
+        width: 100%;
+        height: 50%;
+    }
+
+    #systemsListInfo {
+        height: 70%;
+        font-size: 14px;
+    }
+
+    #systemsListDropdown {
+        text-align: center;
+        height: 30%;
+        width: 100%;
+    }
+
+    #systemsListDropdown a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #clientTestimonials {
+        padding-left: 100px;
+    }
+
+    #companyMetrics {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+        margin-bottom: 100px;
+    }
+
+    #companyMetrics .item {
+        width: 80%;
+        height: 800px;
+    }
+
+    .whyChooseUs .bottom :nth-child(1),
+    .whyChooseUs .bottom :nth-child(2),
+    .whyChooseUs .bottom :nth-child(3) {
+        font-size: 11px;
+    }
+
+    #getInTouchText {
+        padding-left: 70px;
+    }
+
+    #getInTouchInfo,
+    #getInTouchBook {
+        width: 300px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 900px) {
+    #appointmentSubmit,
+    #questionSubmit {
+        margin-top: 10px;
+    }
+
+    #scheduleBar,
+    #dropdownBar {
+        width: 95%;
+    }
+
+    #scheduleBar.open,
+    #dropdownBar.open {
+        left: 5%;
+    }
+
+    #aboutUs .left,
+    #aboutUs .right {
+        width: 100%;
+    }
+
+    .whyChooseUs {
+        height: 650px;
+        margin-bottom: 40px;
+    }
+
+    .videoBackground {
+        height: 55%;
+    }
+
+    .whyChooseUs h1 {
+        font-size: 50px;
+    }
+
+    .whyChooseUsVideo a {
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .whyChooseUsImage {
+        width: 150px;
+    }
+
+    .whyChooseUsText {
+        font-size: 12px;
+    }
+
+    .whyChooseUs .bottom {
+        width: 600px;
+        margin-top: 40px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .whyChooseUs .bottom :nth-child(1),
+    .whyChooseUs .bottom :nth-child(2),
+    .whyChooseUs .bottom :nth-child(3) {
+        font-size: 10px;
+    }
+
+    #clientTestimonials {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #clientTestimonials .item:nth-child(1) {
+        height: 100%;
+        width: 100%;
+        gap: 40px;
+    }
+
+    #clientTestimonials .item:nth-child(2) {
+        width: 100%;
+    }
+
+    #companyMetrics .item {
+        width: 90%;
+        height: 500px;
+    }
+
+    #getInTouchText {
+        font-size: 16px;
+    }
+
+    #getInTouchInfo,
+    #getInTouchBook {
+        width: 250px;
+        font-size: 12px;
+    }
+
+    #bookNow .item h1 {
+        font-size: 24px;
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        height: 50vh;
+        min-height: 600px;
+        padding: 20px;
+    }
+
+    #softwareIllustrations {
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    #softwareIllustrations img {
+        width: 300px;
+    }
+
+    #rightSideIllustrations h1 {
+        font-size: 20px;
+    }
+
+    #bookLinks button {
+        height: 40px;
+        width: 150px;
+        font-size: 12px;
+    }
+
+    #aboutUs {
+        padding: 20px;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    #aboutUs h1 {
+        font-size: 35px;
+    }
+
+    #aboutUs .item:nth-child(1) {
+        font-size: 16px;
+    }
+
+    #aboutUs .item:nth-child(2),
+    #aboutUs .item:nth-child(3) {
+        font-size: 16px;
+    }
+
+    #aboutUs a {
+        font-size: 16px;
+    }
+
+    #featuredServices h1 {
+        font-size: 24px;
+    }
+
+    #featuredServices .item {
+        height: 500px;
+        padding: 20px;
+    }
+
+    #rcmImage {
+        width: 130px;
+    }
+
+    #medicalCredentialingImage {
+        width: 100px;
+    }
+
+    #featuredServices p {
+        font-size: 16px;
+    }
+
+    #medicalBillingServices {
+        height: 40px;
+        width: 200px;
+        font-size: 14px;
+    }
+
+    #systems{
+        margin-bottom: 150px;
+    }
+
+    #systems .item .top{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #systems .item{
+        gap: 50px;
+    }
+
+    #systems p{
+        font-size: 11px;
+    }
+
+    #systems h1{
+        font-size: 30px;
+    }
+    .softwareLogo{
+        width: 300px;
+        animation: scrollDown 50s linear infinite;
+
+    }
+
+    @keyframes scrollDown {
+        100% {
+            transform: translateY(-4600px);
+            /* Move down by the height of the container */
+        }
+    }
+
+    #systems .item{
+        height: 700px;
+    }
+
+    #systemsListInfo{
+        height: 60%;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-left: 30px;
+        font-size: 9px;
+    }
+
+    #systemsListDropdown{
+        height: 40%;
+    }
+
+    #systemsListDropdown p{
+        font-size: 11px;
+    }
+
+    #systemsListDropdown a{
+        width: 170px;
+        font-size: 11px;
+    }
+
+    .videoBackground {
+        width: 90%;
+        height: 50%;
+    }
+
+    .whyChooseUs {
+        margin-bottom: 0px;
+    }
+
+    .whyChooseUsImage {
+        top: 50%;
+    }
+
+    #whyChooseUsImageThis {
+        top: 57% !important;
+    }
+
+    .whyChooseUsText {
+        position: absolute;
+        padding: 20px;
+        width: 100%;
+        left: 0%;
+        top: 73%;
+    }
+
+    .whyChooseUs h1 {
+        font-size: 35px;
+    }
+
+    #clientTestimonials {
+        margin-top: 75px;
+        padding: 20px;
+    }
+
+    #clientTestimonials .item:nth-child(1) h1 {
+        font-size: 28px;
+    }
+
+    #clientTestimonials .item:nth-child(1) p {
+        font-size: 14px;
+    }
+
+    #clientTestimonials .item:nth-child(1) a {
+        height: 40px;
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .cardButton svg {
+        width: 40px;
+    }
+
+    .testimonialCard {
+        flex: 0 0 350px;
+        height: 480px;
+        font-size: 14px;
+    }
+
+    .testimonialLogo {
+        width: 60px;
+    }
+
+    .testimonialPicture {
+        width: 60px;
+    }
+
+    #companyMetrics {
+        padding: 20px;
+        gap: 100px;
+    }
+
+    #companyMetrics svg {
+        width: 80px;
+    }
+
+    #companyMetrics .item {
+        width: 100%;
+        height: 400px;
+    }
+
+    #companyMetrics .metricsInfo h1 {
+        font-size: 50px;
+    }
+
+    #companyMetrics .metricsInfo h2 {
+        font-size: 30px;
+    }
+
+    #contactUs {
+        height: 1000px;
+    }
+
+    #contactUs .item:nth-child(1) {
+        height: 30%;
+    }
+
+    #getInTouchText {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    #contactUs .item:nth-child(2) {
+        height: 70%;
+    }
+
+    #getInTouchInfo {
+        width: 300px;
+        top: -05%;
+        left: 15%;
+    }
+
+    #getInTouchBook {
+        width: 300px;
+        top: 45%;
+        left: 15%;
+    }
+
+    #bookNow {
+        height: 600px;
+        text-align: center;
+    }
+
+    #bookNow .item {
+        padding: 20px;
+    }
+
+    #bookNow .item h1 {
+        font-size: 30px;
+    }
+
+    #bookNow .item p {
+        font-size: 16px;
+    }
+
+    #bookNow .item a {
+        font-size: 16px;
+        width: 150px;
+        text-align: center;
+        padding: 10px;
+        color: gray;
+    }
+}

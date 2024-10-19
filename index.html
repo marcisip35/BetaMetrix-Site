@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BetaMetrix - Medical Billing Company</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./footer.css">
+    <script defer src="./script.js"></script>
+    <script defer src="./footer.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <!-- EmailJs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "dWJuEhqkYQA9xOUz6",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Loading -->
+    <div id="loadingOverlay">
+        <div id="loadingTimer">Loading... 5</div> <!-- Display loading message with countdown -->
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="item">
+
+            <!-- Logo-->
+            <div id="logo">
+                <a href="./index.html">
+                    <h1>BetaMetrix</h1>
+                </a>
+            </div>
+
+            <!-- Nav -->
+            <nav>
+                <div class="left">
+                    <a href="./services.html" class="headerLink">Services</a>
+                    <a href="./aboutUs.html" class="headerLink">About us</a>
+                    <a href="./contact.html" class="headerLink">Contact</a>
+                </div>
+                <div class="right">
+                    <button id="scheduleLink"><svg xmlns="http://www.w3.org/2000/svg" width="60px"
+                            viewBox="-9.6 -9.6 43.20 43.20" fill="none" stroke="#ffffff">
+
+                            <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                                <rect x="-9.6" y="-9.6" width="43.20" height="43.20" rx="21.6" fill="#000000"
+                                    strokewidth="0" />
+
+                            </g>
+
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M13 17H21M17 21V13M10 11H4M20 9V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21H10M15 3V7M9 3V7"
+                                    stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+
+                        </svg></button>
+                    <button id="dropdownLink"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="60px"
+                            viewBox="-20 -20 140.00 140.00" enable-background="new 0 0 100 100" xml:space="preserve"
+                            stroke="#ffffff">
+
+                            <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                                <rect x="-20" y="-20" width="140.00" height="140.00" rx="70" fill="#000000"
+                                    strokewidth="0" />
+
+                            </g>
+
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M78,36H38c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2H78c1.1,0,2,0.9,2,2v4C80,35.1,79.1,36,78,36z" />
+                                <path
+                                    d="M78,54H38c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2H78c1.1,0,2,0.9,2,2v4C80,53.1,79.1,54,78,54z" />
+                                <path
+                                    d="M26,54h-4c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2h4c1.1,0,2,0.9,2,2v4C28,53.1,27.1,54,26,54z" />
+                                <path
+                                    d="M26,36h-4c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2h4c1.1,0,2,0.9,2,2v4C28,35.1,27.1,36,26,36z" />
+                                <path
+                                    d="M26,72h-4c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2h4c1.1,0,2,0.9,2,2v4C28,71.1,27.1,72,26,72z" />
+                                <path
+                                    d="M78,72H38c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2H78c1.1,0,2,0.9,2,2v4C80,71.1,79.1,72,78,72z" />
+                            </g>
+
+                        </svg></button>
+                </div>
+            </nav>
+
+            <!-- Schedule Bar-->
+            <div id="scheduleBar">
+                <div class="item">
+                    <div class="top">
+                        <button id="consultationButton">Consultation</button>
+                        <button id="questionButton">Question</button>
+                        <button class="closeButton" style="margin-left: auto;"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="60px" viewBox="-8.8 -8.8 33.60 33.60" fill="none" stroke="#ffffff">
+
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                                    <rect x="-8.8" y="-8.8" width="33.60" height="33.60" rx="16.8" fill="#000000"
+                                        strokewidth="0" />
+
+                                </g>
+
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M6 16H5L0 11L5 6H6V10H12V1H14V12H6V16Z" fill="#ffffff" />
+                                </g>
+
+                            </svg></button>
+                    </div>
+                    <h1 id="typeOfContact">Schedule An Appointment</h1>
+                </div>
+                <div class="item">
+                    <p>Please fill out the form and we will get back to you</p>
+                    <hr>
+                    <form id="appointmentForm" onsubmit="sendMail(event, 'appointmentForm')"
+                        action="javascript:void(0)">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required placeholder="johnsmith@gmail.com">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="8009104602">
+                        <label for="specialty">Specialty*</label>
+                        <select name="specialty" id="specialty" name="specialty">
+                            <option value="none">--Please choose an option--</option>
+                            <option value="Physician">Physician</option>
+                            <option value="Healthcare Provider">Healthcare Provider</option>
+                            <option value="Practice Staff">Practice Staff</option>
+                            <option value="Laboratory">Laboratory</option>
+                            <option value="Consultant">Consultant</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <button id="appointmentSubmit" type="submit">Submit</button>
+                    </form>
+
+                    <form id="questionForm" onsubmit="sendMail(event, 'questionForm')" action="javascript:void(0)">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required placeholder="johnsmith@gmail.com">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="8009104602">
+                        <label for="message">Message*</label>
+                        <textarea id="message" for="message" placeholder="Write your message here..."></textarea>
+                        <button id="questionSubmit" type="submit">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- Header Dropdown Bar-->
+            <div id="dropdownBar">
+                <button class="closeButton" style="margin-left: auto;"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="60px" viewBox="-8.8 -8.8 33.60 33.60" fill="none" stroke="#ffffff">
+
+                        <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                            <rect x="-8.8" y="-8.8" width="33.60" height="33.60" rx="16.8" fill="#000000"
+                                strokewidth="0" />
+
+                        </g>
+
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M6 16H5L0 11L5 6H6V10H12V1H14V12H6V16Z" fill="#ffffff" />
+                        </g>
+
+                    </svg></button>
+                <a href="./services.html">
+                    <h1>Medical Billing Services</h1>
+                </a>
+                <a href="">
+                    <p>Audits</p>
+                </a>
+                <a href="">
+                    <p>Medical Billing</p>
+                </a>
+                <a href="">
+                    <p>Medical Credentialing</p>
+                </a>
+                <a href="">
+                    <p>Medical Coding</p>
+                </a>
+                <a href="">
+                    <p>MIPS Reporting</p>
+                </a>
+                <a href="">
+                    <h1>Technology & Softwares</h1>
+                </a>
+                <a href="">
+                    <p>Our Softwares</p>
+                </a>
+                <a href="">
+                    <p>What We Do</p>
+                </a>
+                <a href="./aboutUs.html">
+                    <h1>About Us</h1>
+                </a>
+                <a href="">
+                    <p>Who We Are</p>
+                </a>
+                <a href="">
+                    <p>Who We Serve</p>
+                </a>
+                <a href="./contact.html">
+                    <h1>Contact Us</h1>
+                </a>
+                <a href="./contact.html">
+                    <p>Book An Appointment</p>
+                </a>
+                <a href="./contact.html">
+                    <p>Get Help</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Header Graphics-->
+        <div class="item">
+            <div id="softwareIllustrations">
+                <video id="softwareVideo" class="mobileVideoBackground" autoplay muted loop playsinline loading="lazy" alt="Header Video">
+                    <source src="./assets/frontPage.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="rightSideIllustrations">
+                <h1>Personalized Medical<br>Billing</h1>
+            </div>
+        </div>
+
+        <!-- Bottom Content-->
+        <div class="item">
+            <div id="softwareLink">
+            </div>
+            <div id="bookLinks">
+                <button id="bookAConsultationButton">Book a Consultation</button>
+            </div>
+        </div>
+    </header>
+
+    <hr style="width: 95%; margin:auto;">
+
+    <!-- About Us -->
+    <div id="aboutUs">
+        <div class="left">
+            <h1>About Us</h1>
+        </div>
+        <div class="right">
+            <div class="item">
+                <p>At BetaMetrix, we bring transparency to medical billing by providing clients with clear, data-driven
+                    insights into their revenue cycle. This allows us to quickly identify and resolve any bottlenecks or
+                    issues.</p>
+                <hr style="margin-top: 50px">
+            </div>
+            <div class="item">
+                <h3>Who We Are</h3>
+                <p>
+                    Medical billing has long been an unclear and complex process, leaving physicians uncertain about
+                    their billing and accounts receivable. </p>
+                <a href="./aboutUs.html">Learn More ></a>
+                <hr>
+            </div>
+            <div class="item">
+                <h3>What We do</h3>
+                <p>BetaMetrix delivers clear, data-driven insights into the revenue cycle, identifying and resolving
+                    bottlenecks to ensure full transparency in medical billing.</p>
+                <a href="./aboutUs.html">Learn More ></a>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Services -->
+    <div id="featuredServices">
+        <div class="item">
+            <h1 style="margin-bottom:auto;">Services <br>We Offer</h1>
+            <p>Smart solution for all your medical billing needs</p>
+            <a href="./services.html" id="medicalBillingServices">Explore Our Services</a>
+        </div>
+        <div class="item">
+            <img src="./assets/rcmImage.png" style="margin-bottom:auto;" id="rcmImage">
+            <a href="./services.html">
+                <div id="rcmServicesLink">
+                    <h1>Medical Billing<h1>
+                            <p id="rcmServicesP">Our medical auditing ensures billing accuracy and compliance to
+                                optimize your revenue.
+                            </p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <img src="./assets/medicalCredentialingImage.png" style="margin-bottom:auto;"
+                id="medicalCredentialingImage">
+            <a href="./services.html">
+                <div id="medicalCredentialingLink">
+                    <h1>Medical Credentialing</h1>
+                    <p id="medicalCredentialingP">We streamline the medical coding process by combining advanced
+                        technology,
+                        industry expertise,
+                        and a
+                        commitment to precision.</p>
+
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Systems -->
+    <div id="systems">
+        <div class="item">
+            <div class="top">
+                <p>Maximize the Efficiency of Your Medical Billing
+                    Platform</p>
+                <h1>EHR Systems & Technology</h1>
+            </div>
+            <div class="bottom">
+                <div id="systemsScreen">
+                    <img src="./assets/software1.png" class="softwareLogo">
+                    <img src="./assets/software2.png" class="softwareLogo">
+                    <img src="./assets/software3.jpg" class="softwareLogo">
+                    <img src="./assets/software4.jpeg" class="softwareLogo">
+                    <img src="./assets/software5.png" class="softwareLogo">
+                    <img src="./assets/software6.png" class="softwareLogo">
+                    <img src="./assets/software7.jpg" class="softwareLogo">
+                    <img src="./assets/software8.png" class="softwareLogo">
+                    <img src="./assets/software9.png" class="softwareLogo">
+                    <img src="./assets/software10.png" class="softwareLogo">
+                    <img src="./assets/software11.png" class="softwareLogo">
+                    <img src="./assets/software12.png" class="softwareLogo">
+                    <img src="./assets/software13.png" class="softwareLogo">
+                    <img src="./assets/software14.png" class="softwareLogo">
+                    <img src="./assets/software15.png" class="softwareLogo">
+                    <img src="./assets/software16.png" class="softwareLogo">
+                    <img src="./assets/software17.png" class="softwareLogo">
+                    <img src="./assets/software18.png" class="softwareLogo">
+                    <img src="./assets/software19.png" class="softwareLogo">
+                    <img src="./assets/software20.png" class="softwareLogo">
+                    <img src="./assets/software21.jpg" class="softwareLogo">
+                    <img src="./assets/software1.png" class="softwareLogo">
+                    <img src="./assets/software2.png" class="softwareLogo">
+                    <img src="./assets/software3.jpg" class="softwareLogo">
+                    <img src="./assets/software4.jpeg" class="softwareLogo">
+                </div>
+                <div id="systemsList">
+                    <div id="systemsListInfo">
+                        <ul>
+                            <li>AdvancedMD</li>
+                            <li>AdvantX</li>
+                            <li>Allscripts</li>
+                            <li>Aprima</li>
+                            <li>Athena</li>
+                            <li>Azalea Health</li>
+                            <li>CareTracker PM/EMR</li>
+                            <li>Charm</li>
+                            <li>eClinicalWorks</li>
+                            <li>Ema/ModMed</li>
+                            <li>Epic</li>
+                            <li>GE Centricity</li>
+                            <li>Health and Hospice-Home <br>Solutions</li>
+                            <li>HST</li>
+                            <li>Valant</li>
+                        </ul>
+                        <ul>
+                        </ul>
+                        <ul>
+                            <li>Intergy</li>
+                            <li>Kareo/Tebra</li>
+                            <li>Matrix</li>
+                            <li>Medisoft</li>
+                            <li>Meditech</li>
+                            <li>MicroMD</li>
+                            <li>ModMed</li>
+                            <li>NextGen</li>
+                            <li>Point Click Care -- SNF</li>
+                            <li>Practice Fusion</li>
+                            <li>Prompt</li>
+                            <li>SequelMed</li>
+                            <li>Simple Practice</li>
+                            <li>Therapy Notes</li>
+                            <li>WellSky</li>
+                        </ul>
+                    </div>
+                    <div id="systemsListDropdown">
+                        <p>BetaMetrix transformed our billing operations with their efficient, automated processes.
+                            Their system is fast, reliable, and tailored to our practice, improving our revenue cycle
+                            management.</p>
+                        <a href="./services.html">Supported Platforms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <!-- <h1 id="servicesTitle">Other Services We Offer</h1>
+    <div id="services">
+        <div class="item">
+            <img src="./assets/medicalCodingImage.png">
+            <h1>Medical Coding</h1>
+            <p>We streamline medical coding with advanced technology and industry expertise. Our certified coders ensure
+                accuracy across more than 70 specialties.</p>
+        </div>
+        <div class="item">
+            <img src="./assets/patientAnalyticsImage.png">
+            <h1>Patient Collections & Analytics</h1>
+            <p>BetaMetrix provides the technology and processes to improve patient collections at every stage—before,
+                during, and after the visit.</p>
+        </div>
+        <div class="item">
+            <img src="./assets/mipsReportingImage.png">
+            <h1>MIPS Reporting</h1>
+            <p>We specialize in MIPS quality tracking and reporting. By combining industry expertise with innovative
+                technology, we help you avoid penalties.</p>
+        </div>
+    </div> -->
+
+    <!-- Why Choose Us-->
+    <div class="whyChooseUs">
+        <div class="whyChooseUsVideo">
+            <h1>Why Choose Us?</h1>
+            <a href="./index.html#clientTestimonials">Client Testimonials</a>
+        </div>
+        <video autoplay muted loop playsinline class="videoBackground mobileVideoBackground" loading="lazy" alt="Why Choose Us Video 1">
+            <source src="./assets/whyChooseUs.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="./assets/whyChooseUsImage1.png" class="whyChooseUsImage">
+        <div class="whyChooseUsText">
+            <p>
+                Our company focuses on improving the user interface and providing top talent to help physicians optimize
+                their revenue cycle and clinical efficiency.</p>
+            <div class="bottom">
+                <a href="./contact.html">Book Consulation</a>
+                <a href="./index.html#companyMetrics">Performance Metrics</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="whyChooseUs">
+        <div class="whyChooseUsVideo">
+            <h1>Detailed Audits</h1>
+            <a href="./services.html">Auditing</a>
+        </div>
+        <video autoplay muted loop playsinline class="videoBackground mobileVideoBackground" loading="lazy" alt="Why Choose Us Video 2">
+            <source src="./assets/whyChooseUs2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="./assets/whyChooseUsImage2.jpg" class="whyChooseUsImage">
+        <img src="./assets/whyChooseUsImage3.png" class="whyChooseUsImage" id="whyChooseUsImageThis"
+            style="top: 60%; left: 53%; z-index: -1;">
+        <div class="whyChooseUsText">
+            <p>
+                Every new account begins with a thorough audit of past billing practices, followed by assigning a team
+                of expert billers..</p>
+            <div class="bottom">
+                <a href="./contact.html">Request An Audit</a>
+                <a href="./contact.html">Sample Audit</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="whyChooseUs">
+        <div class="whyChooseUsVideo">
+            <h1>Expert Billers</h1>
+            <a href="./services.html">Billing Services</a>
+        </div>
+        <video autoplay muted loop playsinline class="videoBackground mobileVideoBackground" loading="lazy" alt="Why Choose Us Video 3">
+            <source src="./assets/whyChooseUs3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="./assets/whyChooseUsImage4.png" class="whyChooseUsImage">
+        <div class="whyChooseUsText">
+            <p>
+                Many billing companies focus on easy wins, but at BetaMetrix, we prioritize pursuing more challenging
+                and valuable opportunities.</p>
+            <div class="bottom">
+                <a href="./services.html">Explore Our Services</a>
+                <a href="./services.html">Supported Softwares</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Testimonials -->
+    <div id="clientTestimonials">
+        <div class="item">
+            <h1>What our customers say</h1>
+            <p>See How BetaMetrix Delivers Fast, Reliable Billing Solutions for Medical Practices</p>
+            <a href="./contact.html">Book Consultation</a>
+            <div id="testimonialCardButtons">
+                <button class="cardButton"><svg xmlns="http://www.w3.org/2000/svg" width="60px"
+                        viewBox="-8.4 -8.4 40.80 40.80" fill="none">
+
+                        <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                            <rect x="-8.4" y="-8.4" width="40.80" height="40.80" rx="20.4" fill="#ffffff"
+                                strokewidth="0" />
+
+                        </g>
+
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z"
+                                fill="#000000" />
+                        </g>
+
+                    </svg></button>
+                <button class="cardButton"><svg xmlns="http://www.w3.org/2000/svg" width="60px"
+                        viewBox="-12 -12 48.00 48.00" fill="none">
+
+                        <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                            <rect x="-12" y="-12" width="48.00" height="48.00" rx="24" fill="#ffffff" strokewidth="0" />
+
+                        </g>
+
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z"
+                                fill="#000000" />
+                        </g>
+
+                    </svg></button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="testimonialCard">
+                <img class="testimonialLogo" src="./assets/doctorMdLogo.jpg">
+                <p>"BetaMetrix truly transformed our medical billing process. Their dedication to transparency and
+                    precision is unmatched. With their expert team handling our accounts, we've seen a significant
+                    improvement in our revenue cycle. Highly recommend!"</p>
+                <img class="testimonialPicture" src="./assets/clientTestimonialImage2.png">
+                <p class="testimonialName">J. Sheldon, MD</p>
+                <p>Doctor of Medicine</p>
+            </div>
+
+            <div class="testimonialCard">
+                <img class="testimonialLogo" src="./assets/doctorMdLogo.jpg">
+                <p>"Working with BetaMetrix has been a game-changer for us. Their attention to detail and focus on
+                    maximizing revenue recovery sets them apart. They handle rejected claims with precision, ensuring
+                    nothing slips through the cracks. We couldn't be happier with the results!"</p>
+                <img class="testimonialPicture" src="./assets/clientTestimonialImage4.png">
+                <p class="testimonialName">H. Peters</p>
+                <p>Practice Manager</p>
+            </div>
+
+            <div class="testimonialCard">
+                <img class="testimonialLogo" src="./assets/doctorMdLogo.jpg">
+                <p>"We've worked with other billing companies in the past, but BetaMetrix stands out for their
+                    dedication to excellence. From the initial audit to ongoing support, they've been instrumental in
+                    streamlining our billing processes and maximizing our revenue potential."</p>
+                <img class="testimonialPicture" src="./assets/clientTestimonialImage5.png">
+                <p class="testimonialName">D. Mitchell, MD</p>
+                <p>Doctor of Medicine</p>
+            </div>
+
+            <div class="testimonialCard">
+                <img class="testimonialLogo" src="./assets/doctorMdLogo.jpg">
+                <p>"Working with BetaMetrix has transformed the way we manage our hospital's administration. Their
+                    attention to detail and customized solutions have improved efficiency, allowing us to focus on what
+                    we do best — providing excellent patient care. I couldn't be more satisfied with the results."
+                </p>
+                <img class="testimonialPicture" src="./assets/clientTestimonialImage1.png">
+                <p class="testimonialName">Emily Johnson</p>
+                <p>Pediatrician</p>
+            </div>
+
+            <div class="testimonialCard">
+                <img class="testimonialLogo" src="./assets/doctorMdLogo.jpg">
+                <p>"The services provided by BetaMetrix have been nothing short of amazing. From the ease of
+                    implementation to the ongoing support, their team has made a significant difference in our
+                    day-to-day operations. I highly recommend their expertise!"
+                </p>
+                <img class="testimonialPicture" src="./assets/clientTestimonialImage3.png">
+                <p class="testimonialName">Dr. Samantha Lee</p>
+                <p>Orthopedic Surgeon</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Metrics -->
+    <div id="companyMetrics">
+        <div class="item">
+            <video autoplay muted loop playsinline class="metricsVideo mobileVideoBackground" loading="lazy" alt="Company Metrics Video 1">
+
+                <source src="./assets/clientTestimonialVideo1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="metricsInfo">
+                <p class="metricsTitle">Crucial Success Measures</p>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" width="100px" viewBox="0 0 32 32"
+                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1"
+                    xml:space="preserve" stroke="#ffffff">
+
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <g id="SVGRepo_iconCarrier">
+
+                        <path
+                            d="M15.392,24.804c0.35,0.254 0.824,0.254 1.174,-0c-0,-0 3.007,-2.178 5.412,-5.403c1.665,-2.233 3.021,-4.961 3.021,-7.811c0,-5.315 -3.463,-9.596 -9.02,-9.596c-5.557,0 -9.021,4.281 -9.021,9.596c0,2.85 1.357,5.578 3.022,7.811c2.405,3.225 5.412,5.403 5.412,5.403Zm0.587,-2.076c-0.932,-0.754 -2.806,-2.391 -4.396,-4.523c-1.415,-1.897 -2.625,-4.193 -2.625,-6.615c0,-4.174 2.657,-7.596 7.021,-7.596c4.364,0 7.02,3.422 7.02,7.596c0,2.422 -1.209,4.718 -2.624,6.615c-1.59,2.132 -3.464,3.769 -4.396,4.523l-0,-0Z" />
+
+                        <path
+                            d="M22.502,23.412c0.803,0.46 1.382,0.955 1.382,1.582c-0,0.591 -0.525,1.064 -1.254,1.507c-1.518,0.921 -3.973,1.493 -6.734,1.493c-2.761,0 -5.216,-0.572 -6.733,-1.493c-0.73,-0.443 -1.254,-0.916 -1.254,-1.507c-0,-0.266 0.128,-0.512 0.325,-0.747c0.288,-0.347 0.713,-0.656 1.235,-0.934c0.487,-0.259 0.673,-0.865 0.413,-1.352c-0.259,-0.488 -0.865,-0.673 -1.352,-0.413c-1.708,0.909 -2.621,2.17 -2.621,3.446c-0,1.177 0.762,2.334 2.216,3.217c1.754,1.065 4.58,1.783 7.771,1.783c3.192,0 6.017,-0.718 7.771,-1.783c1.454,-0.883 2.217,-2.04 2.217,-3.217c-0,-1.22 -0.826,-2.422 -2.387,-3.317c-0.479,-0.274 -1.091,-0.109 -1.365,0.37c-0.275,0.479 -0.109,1.091 0.37,1.365Z" />
+
+                        <path
+                            d="M14.999,9.994l-2,0c-0.551,0 -1,0.448 -1,1c0,0.552 0.449,1 1,1l2,0l-0.001,2c-0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1l0.001,-2l2,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-2,0l0,-2c0.001,-0.551 -0.447,-1 -0.999,-1c-0.552,0 -1,0.448 -1.001,1l0,2Z" />
+
+                    </g>
+
+                </svg>
+                <h1 data-value="500">0+</h1>
+                <h2>Hospital Rooms</h2>
+            </div>
+        </div>
+        <div class="item">
+            <video autoplay muted loop playsinline class="metricsVideo mobileVideoBackground" loading="lazy" alt="Company Metrics Video 2">
+                <source src="./assets/clientTestimonialVideo3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="metricsInfo">
+                <p class="metricsTitle">Key Performance Metrics</p>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="_x32_" width="100px" viewBox="0 0 512 512" xml:space="preserve" fill="#ffffff" stroke="#ffffff">
+
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <g id="SVGRepo_iconCarrier">
+                        <style type="text/css">
+                            .st0 {
+                                fill: #ffffff;
+                            }
+                        </style>
+                        <g>
+                            <path class="st0"
+                                d="M110.547,411.844c-5.234,5.813-9.141,12.5-11.328,19.266c-1.531,4.766-2.266,9.469-2.266,13.875 c0,2.688,0.266,5.25,0.844,7.672c0.438,1.797,1.031,3.516,1.828,5.094c0.594,1.203,1.313,2.344,2.156,3.375 c1.266,1.531,2.828,2.859,4.688,3.781c1.844,0.938,3.969,1.438,6.125,1.422v-9.766c-0.453,0-0.797-0.063-1.125-0.156 c-0.578-0.156-1.047-0.422-1.578-0.891c-0.375-0.359-0.781-0.828-1.156-1.469c-0.563-0.922-1.094-2.203-1.453-3.734 c-0.359-1.547-0.563-3.344-0.563-5.328c0-3.297,0.578-7.047,1.797-10.891c1.141-3.531,2.953-7.188,5.328-10.656 c3.547-5.219,8.391-9.984,13.984-13.391c2.781-1.703,5.781-3.078,8.891-4.016c3.125-0.938,6.391-1.438,9.766-1.438 c4.5,0,8.813,0.906,12.844,2.531c6.031,2.406,11.484,6.453,15.844,11.281c4.344,4.813,7.578,10.406,9.266,15.688 c1.234,3.844,1.813,7.594,1.813,10.891c0,2.016-0.219,3.844-0.594,5.391c-0.266,1.156-0.641,2.188-1.047,3 c-0.313,0.625-0.641,1.125-0.984,1.547c-0.5,0.609-1,1-1.484,1.25c-0.5,0.234-1.016,0.375-1.766,0.391v9.766 c1.281,0.016,2.547-0.172,3.75-0.5c2.109-0.578,4-1.672,5.547-3.094c1.156-1.063,2.125-2.281,2.922-3.609 c1.219-2,2.063-4.219,2.609-6.594s0.813-4.906,0.813-7.547c0-4.406-0.734-9.125-2.266-13.875 c-1.453-4.516-3.672-8.984-6.547-13.188c-4.313-6.297-10.063-12.016-16.969-16.234c-3.453-2.094-7.188-3.813-11.172-5 c-3.984-1.219-8.203-1.875-12.578-1.875c-5.828,0-11.391,1.188-16.469,3.234C122.375,401.109,115.781,406.047,110.547,411.844z" />
+                            <path class="st0"
+                                d="M165.594,452.109c-1.594,1.266-2.531,3.172-2.531,5.219v7.891c0,2.031,0.938,3.953,2.531,5.219 c1.594,1.25,3.688,1.719,5.656,1.25l5.266-1.25v-18.344l-5.266-1.25C169.281,450.375,167.188,450.844,165.594,452.109z" />
+                            <path class="st0"
+                                d="M121.719,450.844l-5.281,1.25v18.344l5.281,1.25c1.969,0.469,4.063,0,5.656-1.25 c1.594-1.266,2.531-3.188,2.531-5.219v-7.891c0-2.047-0.938-3.953-2.531-5.219S123.688,450.375,121.719,450.844z" />
+                            <path class="st0"
+                                d="M453.453,429.594c-2.016-7.531-4.859-14.281-8.359-20.281c-6.141-10.547-14.266-18.75-23.234-25.25 c-6.734-4.875-13.922-8.859-21.234-12.281c-10.953-5.125-22.156-9.063-32.5-12.891c-10.344-3.813-19.797-7.547-27.156-11.891 c-2.688-1.594-5.109-3.25-7.203-4.984c-3.125-2.609-5.563-5.391-7.328-8.5s-2.953-6.609-3.406-10.984 c-0.328-3.125-0.469-6.063-0.469-8.875c0-8.281,1.219-15.453,2.781-22.781c4.625-5.219,8.859-11.438,12.859-18.875 c4.016-7.484,7.828-16.219,11.625-26.563c2.438-1.109,4.891-2.438,7.281-4.063c5.469-3.656,10.656-8.781,14.984-15.609 c4.313-6.828,7.781-15.313,10.156-25.781c0.656-2.906,0.969-5.797,0.969-8.641c0.016-5.938-1.391-11.594-3.75-16.656 c-1.641-3.516-3.719-6.734-6.141-9.656c1.234-4.563,2.734-10.703,4.078-17.891c1.844-9.984,3.375-21.984,3.375-34.594 c0-8.141-0.641-16.547-2.297-24.844c-1.234-6.219-3.063-12.391-5.625-18.297c-3.859-8.891-9.469-17.25-17.266-24.156 c-7.219-6.391-16.266-11.484-27.188-14.75c-3.859-4.625-7.734-8.563-11.703-11.906c-3.438-2.875-6.953-5.297-10.547-7.281 c-5.406-3-11-4.984-16.734-6.188s-11.578-1.641-17.641-1.641c-8.359,0-17.156,0.828-26.875,1.781 c-3.672,0.375-6.75,0.828-9.422,1.297c-3.984,0.719-6.969,1.453-9.359,1.938c-1.203,0.234-2.25,0.422-3.281,0.547 c-1.031,0.109-2.031,0.188-3.172,0.188c-1.531,0-3.297-0.125-5.609-0.453c-7.078-1.031-13.547-2.625-18.625-4.188 c-2.531-0.766-4.719-1.531-6.438-2.188c-0.859-0.328-1.609-0.625-2.203-0.875c-0.609-0.25-1.063-0.484-1.328-0.609l0.016,0.016 c-0.781-0.406-1.531-0.625-2.203-0.75C182.609,0.031,182.016,0,181.5,0c-1.078,0-1.844,0.156-2.453,0.313s-1.078,0.344-1.5,0.516 c-0.813,0.328-1.438,0.672-2.063,1.047c-1.141,0.688-2.234,1.453-3.391,2.344c-2.016,1.563-4.234,3.5-6.594,5.781 c-3.531,3.406-7.313,7.531-10.75,12.031c-1.719,2.234-3.328,4.578-4.781,7s-2.734,4.906-3.75,7.516 c-4.969,12.922-8.25,24.828-10.281,35.813c-2.047,10.984-2.828,21.047-2.828,30.281c0,15.109,2.109,27.922,4.141,38.75 c0,0.516,0.016,1,0.047,1.516c0.063,1.016,0.172,2.063,0.281,3.156c0.172,1.625,0.359,3.297,0.5,4.703 c0.078,0.703,0.141,1.328,0.188,1.813c0.016,0.234,0.031,0.453,0.031,0.609l0.016,0.156v0.047v0.016v0.922l1.984,8.828 c-2.859,3.125-5.328,6.625-7.25,10.469c-2.688,5.344-4.281,11.375-4.281,17.75c0,2.813,0.328,5.719,0.984,8.609 c1.563,6.984,3.641,13.078,6.125,18.391c3.719,7.984,8.438,14.188,13.656,18.844c4.047,3.625,8.375,6.266,12.656,8.219 c3.781,10.344,7.594,19.063,11.609,26.547c4,7.453,8.219,13.656,12.844,18.875c1.563,7.328,2.781,14.516,2.797,22.797 c0,2.813-0.156,5.75-0.484,8.875c-0.313,3-0.969,5.594-1.922,7.938c-1.422,3.5-3.5,6.484-6.328,9.313 c-2.828,2.781-6.438,5.391-10.703,7.813c-4.328,2.453-9.344,4.75-14.797,6.938c-9.563,3.875-20.469,7.531-31.516,11.953 c-8.281,3.297-16.672,7.063-24.672,11.766c-6,3.531-11.766,7.625-17.078,12.484c-7.953,7.281-14.813,16.359-19.547,27.578 c-4.75,11.234-7.391,24.531-7.375,40.25c0,2.219,0.469,4.328,1.234,6.281c0.703,1.828,1.688,3.5,2.844,5.094 c2.188,2.969,5,5.625,8.453,8.188c6.063,4.469,14.109,8.656,24.531,12.594c15.625,5.891,36.563,11.188,63.641,15.031 c27.063,3.844,60.266,6.25,100.266,6.25c34.703,0,64.266-1.797,89.156-4.781c18.656-2.25,34.703-5.156,48.313-8.484 c10.219-2.484,19.078-5.219,26.672-8.094c5.688-2.156,10.688-4.406,15.031-6.719c3.25-1.734,6.125-3.516,8.672-5.344 c3.813-2.766,6.875-5.609,9.203-8.844c1.172-1.609,2.125-3.328,2.828-5.203c0.703-1.844,1.125-3.875,1.125-5.969 C456.984,447.813,455.75,438.203,453.453,429.594z M327.266,358.094l-50.156,78.328l-5.594-38.453l14.234-15.063l-9.219-15.375 l38.906-20.453c1.078,1.391,2.219,2.703,3.422,3.953C321.438,353.672,324.266,356,327.266,358.094z M183.078,87.156 c45.219,10.031,133.641-9.141,133.641-9.141s0.953,21.922,16.031,42.047c5.938,7.906,10.828,20.266,14.5,32.016 c-0.984-1.828-3.297-2.516-6.75-2.953c-7.75-1.047-19.266-1.719-32.234-1.094c-38.531,1.891-35.672,5.391-50.797,5.391 s-12.266-3.5-50.797-5.391c-12.969-0.625-24.484,0.047-32.25,1.094c-4.031,0.531-6.563,1.344-7.141,4.031 c-0.203,1-0.516,2.125-1.906,2.672C169.641,139.891,181.516,119.531,183.078,87.156z M339.922,176.469 c0,0.219-0.156,22.313-15.188,29.859c-5.109,2.578-11.516,4-18.031,4.016c-6.875,0-13.156-1.563-18.172-4.516 c-5.547-3.25-9.281-8.078-11.109-14.313c-0.438-1.453-0.828-2.906-1.234-4.313c-1.188-4.297-4.391-16.234,2.406-21.484 c4.375-3.422,17.953-5.578,30.969-5.578c11.828,0,23.891,1.609,27.422,5.297C339.313,167.875,340.219,172.219,339.922,176.469z M238.75,187.203c-0.406,1.406-0.813,2.859-1.234,4.313c-1.828,6.234-5.563,11.063-11.094,14.313 c-5.031,2.953-11.313,4.516-18.188,4.516c-6.516-0.016-12.906-1.438-18.031-4.016c-15.031-7.547-15.172-29.641-15.188-29.859 c-0.297-4.25,0.609-8.594,2.922-11.031c3.547-3.688,15.609-5.297,27.438-5.297c13,0,26.594,2.156,30.984,5.578 C243.141,170.969,239.938,182.906,238.75,187.203z M188.547,264.063c-3.922-7.313-7.828-16.406-11.844-27.75l-1.328-3.703 l-3.688-1.359c-2.563-0.938-5.063-2.156-7.453-3.766c-3.609-2.422-7.031-5.734-10.172-10.672s-5.953-11.563-7.984-20.516 c-0.391-1.703-0.547-3.328-0.547-4.922c0-3.594,0.859-7,2.5-10.25c1.344-2.703,3.219-5.25,5.5-7.563 c3.844,5.813,7.031,10.422,8.188,11.578c2.203,2.203,3.297,0.078,3.469-4.047c1.359,9.172,5.719,24.313,19.797,31.797 c20.266,10.766,50.516,6.734,60.781-17.234c4.641-10.813,4.703-21.375,11.703-21.375c6.984,0,7.063,10.563,11.703,21.375 c10.281,23.969,40.531,28,60.797,17.234c20.25-10.766,20.391-37.422,20.391-39.297c0-0.969,0.922-1.703,2.234-1.844 c1.719,7.234,2.609,12.141,2.609,12.141s1.938-3.703,4.844-8.641c1.734,2.031,3.172,4.219,4.234,6.5 c1.422,3.063,2.188,6.266,2.188,9.594c0,1.609-0.172,3.25-0.563,4.938c-1.344,5.969-3.047,10.906-4.953,15 c-2.875,6.125-6.188,10.344-9.656,13.438c-3.453,3.094-7.141,5.109-10.969,6.531l-3.703,1.344l-1.313,3.719 c-4.016,11.344-7.938,20.453-11.859,27.75c-3.938,7.313-7.844,12.813-11.906,17.094l-1.609,1.703l-0.5,2.266 c-1.813,8.359-3.625,17.594-3.625,28.531c0,3.375,0.172,6.891,0.547,10.594c0.453,4.344,1.453,8.422,2.938,12.172 c0.063,0.172,0.156,0.359,0.219,0.516l-50.891,26.766l-56.406-26.172c1.734-4.063,2.906-8.5,3.406-13.281 c0.391-3.703,0.547-7.219,0.547-10.594c0.016-10.938-1.797-20.188-3.625-28.547l-0.5-2.266l-1.609-1.688 C196.391,276.844,192.469,271.375,188.547,264.063z M188.094,355.594c2.938-2.359,5.641-5,8.031-7.969l43.016,19.969l-9.188,15.313 l14.219,15.063l-5.25,36.203l-54.875-75.609C185.438,357.609,186.797,356.625,188.094,355.594z M440.219,458.5 c-0.016,0.094-0.125,0.406-0.422,0.906c-0.563,0.969-1.875,2.531-4.094,4.313c-1.922,1.547-4.516,3.281-7.781,5.063 c-5.734,3.141-13.5,6.406-23.344,9.5c-14.781,4.656-34.297,8.906-58.922,12c-24.625,3.063-54.359,4.969-89.672,4.969 c-34.094,0-63-1.781-87.125-4.672c-18.094-2.172-33.5-4.984-46.344-8.109c-9.656-2.359-17.875-4.906-24.703-7.5 c-5.141-1.938-9.5-3.906-13.078-5.828c-2.688-1.438-4.953-2.859-6.797-4.172c-2.75-1.969-4.5-3.766-5.375-5 c-0.438-0.594-0.656-1.063-0.734-1.281c-0.047-0.094-0.063-0.156-0.063-0.188c0-9.375,1.063-17.406,2.906-24.375 c1.609-6.094,3.828-11.391,6.531-16.078c4.719-8.203,10.922-14.641,18.297-20.063c5.5-4.078,11.672-7.563,18.203-10.672 c7.328-3.484,15.109-6.484,22.922-9.375v16.875h5.859h5.859v-21.203c7.469-2.797,14.75-5.672,21.531-9.109l86.703,119.453 l75.75-118.266c0.234,0.359,0.469,0.719,0.688,1.063c3.156,5.078,5.359,10.609,6.828,16.875c1.453,6.25,2.125,13.25,2.125,21.047 c0,18.063,0,33.797,0,44.391H318.75v11.734h67v-11.734h-27.219c0-10.594,0-26.328,0-44.391c0-11.359-1.297-21.703-4.516-31.141 c-0.281-0.813-0.578-1.625-0.891-2.422c9.156,3.609,18.734,6.859,28.016,10.547c7.953,3.141,15.672,6.578,22.688,10.656 c5.281,3.063,10.172,6.5,14.516,10.406c6.516,5.922,11.859,12.906,15.703,21.859C437.875,433.516,440.219,444.516,440.219,458.5 L440.219,458.5z" />
+                        </g>
+                    </g>
+
+                </svg>
+                <h1 data-value="200">0+</h1>
+                <h2>Satisfied Doctors</h2>
+            </div>
+        </div>
+        <div class="item">
+            <video autoplay muted loop playsinline class="metricsVideo mobileVideoBackground" loading="lazy" alt="Company Metrics Video 3">
+                <source src="./assets/clientTestimonialVideo2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="metricsInfo">
+                <p class="metricsTitle">Major Performance Highlights</p>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"
+                    version="1.1" id="Capa_1" width="100px" viewBox="0 0 436.38 436.381" xml:space="preserve"
+                    stroke="#ffffff">
+
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <g>
+                                <path
+                                    d="M218.19,232c54.735,0,99.107-51.936,99.107-116c0-88.842-44.371-116-99.107-116c-54.736,0-99.107,27.158-99.107,116 C119.083,180.064,163.455,232,218.19,232z" />
+                                <path
+                                    d="M432.47,408.266l-50-112.636c-1.838-4.142-5.027-7.534-9.045-9.626l-79.62-41.445c-4.809-2.504-10.423-2.947-15.564-1.231 c-5.141,1.715-9.364,5.442-11.707,10.329L232.7,324.266l4.261-38.408c0.133-1.201-0.174-2.412-0.865-3.405l-13.8-19.839 c-0.048-0.068-0.104-0.131-0.154-0.195l11.935-9.061c1.028-0.781,1.633-1.998,1.633-3.291c0-4.834-3.935-8.769-8.77-8.769h-17.498 c-4.835,0-8.769,3.935-8.769,8.769c0,1.293,0.604,2.51,1.633,3.291l11.934,9.061c-0.051,0.064-0.106,0.127-0.154,0.195 l-13.8,19.839c-0.691,0.993-0.999,2.204-0.865,3.405l4.26,38.408l-33.834-70.609c-2.342-4.887-6.566-8.614-11.707-10.329 c-5.14-1.716-10.757-1.271-15.564,1.231l-79.62,41.445c-4.018,2.092-7.207,5.484-9.045,9.626l-50,112.636 c-2.746,6.188-2.177,13.342,1.512,19.018c3.689,5.674,9.999,9.098,16.768,9.098h392c6.769,0,13.078-3.424,16.768-9.1 C434.648,421.607,435.216,414.453,432.47,408.266z" />
+                            </g>
+                        </g>
+                    </g>
+
+                </svg>
+                <h1 data-value="25">0+</h1>
+                <h2>Different Specialties</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us -->
+    <div id="contactUs">
+        <div class="item">
+            <div id="getInTouchText">
+                <h1>Get in touch</h1>
+                <p>Want to get in touch? We would love to hear from you, here is how you can reach us.</p>
+            </div>
+            <div id="getInTouchImage">
+            </div>
+        </div>
+        <div class="item">
+            <div id="getInTouchInfo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60px" viewBox="0 0 24 24" fill="none">
+
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M15.5562 14.5477L15.1007 15.0272C15.1007 15.0272 14.0181 16.167 11.0631 13.0559C8.10812 9.94484 9.1907 8.80507 9.1907 8.80507L9.47752 8.50311C10.1841 7.75924 10.2507 6.56497 9.63424 5.6931L8.37326 3.90961C7.61028 2.8305 6.13596 2.68795 5.26145 3.60864L3.69185 5.26114C3.25823 5.71766 2.96765 6.30945 3.00289 6.96594C3.09304 8.64546 3.81071 12.259 7.81536 16.4752C12.0621 20.9462 16.0468 21.1239 17.6763 20.9631C18.1917 20.9122 18.6399 20.6343 19.0011 20.254L20.4217 18.7584C21.3806 17.7489 21.1102 16.0182 19.8833 15.312L17.9728 14.2123C17.1672 13.7486 16.1858 13.8848 15.5562 14.5477Z"
+                            fill="#000000" />
+                        <path
+                            d="M13.2595 1.87983C13.3257 1.47094 13.7122 1.19357 14.1211 1.25976C14.1464 1.26461 14.2279 1.27983 14.2705 1.28933C14.3559 1.30834 14.4749 1.33759 14.6233 1.38082C14.9201 1.46726 15.3347 1.60967 15.8323 1.8378C16.8286 2.29456 18.1544 3.09356 19.5302 4.46936C20.906 5.84516 21.705 7.17097 22.1617 8.16725C22.3899 8.66487 22.5323 9.07947 22.6187 9.37625C22.6619 9.52466 22.6912 9.64369 22.7102 9.72901C22.7197 9.77168 22.7267 9.80594 22.7315 9.83125L22.7373 9.86245C22.8034 10.2713 22.5286 10.6739 22.1197 10.7401C21.712 10.8061 21.3279 10.53 21.2601 10.1231C21.258 10.1121 21.2522 10.0828 21.2461 10.0551C21.2337 9.9997 21.2124 9.91188 21.1786 9.79572C21.1109 9.56339 20.9934 9.21806 20.7982 8.79238C20.4084 7.94207 19.7074 6.76789 18.4695 5.53002C17.2317 4.29216 16.0575 3.59117 15.2072 3.20134C14.7815 3.00618 14.4362 2.88865 14.2038 2.82097C14.0877 2.78714 13.9417 2.75363 13.8863 2.7413C13.4793 2.67347 13.1935 2.28755 13.2595 1.87983Z"
+                            fill="#000000" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.4857 5.3293C13.5995 4.93102 14.0146 4.7004 14.4129 4.81419L14.2069 5.53534C14.4129 4.81419 14.4129 4.81419 14.4129 4.81419L14.4144 4.81461L14.4159 4.81505L14.4192 4.81602L14.427 4.81834L14.4468 4.8245C14.4618 4.82932 14.4807 4.8356 14.5031 4.84357C14.548 4.85951 14.6074 4.88217 14.6802 4.91337C14.8259 4.97581 15.0249 5.07223 15.2695 5.21694C15.7589 5.50662 16.4271 5.9878 17.2121 6.77277C17.9971 7.55775 18.4782 8.22593 18.7679 8.7154C18.9126 8.95991 19.009 9.15897 19.0715 9.30466C19.1027 9.37746 19.1254 9.43682 19.1413 9.48173C19.1493 9.50418 19.1555 9.52301 19.1604 9.53809L19.1665 9.55788L19.1688 9.56563L19.1698 9.56896L19.1702 9.5705C19.1702 9.5705 19.1707 9.57194 18.4495 9.77798L19.1707 9.57194C19.2845 9.97021 19.0538 10.3853 18.6556 10.4991C18.2607 10.6119 17.8492 10.3862 17.7313 9.99413L17.7276 9.98335C17.7223 9.96832 17.7113 9.93874 17.6928 9.89554C17.6558 9.8092 17.5887 9.66797 17.4771 9.47938C17.2541 9.10264 16.8514 8.53339 16.1514 7.83343C15.4515 7.13348 14.8822 6.73078 14.5055 6.50781C14.3169 6.39619 14.1757 6.32909 14.0893 6.29209C14.0461 6.27358 14.0165 6.26254 14.0015 6.25721L13.9907 6.25352C13.5987 6.13564 13.3729 5.72419 13.4857 5.3293Z"
+                            fill="#000000" />
+                    </g>
+
+                </svg>
+                <h1>Call Us</h1>
+                <p>Interested in BetaMetrix services? Give us a call and we will be happy to talk.</p>
+                <a href="tel:4109546400">410-954-6400</a>
+            </div>
+            <div id="getInTouchBook">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="60px" viewBox="0 0 1920 1920">
+
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z"
+                            fill-rule="evenodd" />
+                    </g>
+
+                </svg>
+                <h1>Email Us</h1>
+                <p>Got any questions about our services? Email us and we will get back to you as soon as possible.</p>
+                <a href="mailto:admin@BetaMetrix.us">admin@BetaMetrix.us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Now -->
+    <div id="bookNow">
+        <div class="item">
+            <h1>What are you waiting for? Get a consultation now!</h1>
+            <p>Interested in BetaMetrix Services? Give us a call and we will be happy to talk.</p>
+            <a href="./contact.html">Book Now</a>
+        </div>
+        <video autoplay muted loop playsinline id="backgroundVideo" class="mobileVideoBackground" loading="lazy" alt="Book Now Video">
+            <source src="./assets/whyChooseUs4.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- Footer-->
+    <footer>
+    </footer>
+
+</body>
+
+</html>
