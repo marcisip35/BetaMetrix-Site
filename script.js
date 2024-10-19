@@ -17,9 +17,7 @@ const html = document.documentElement;
 document.addEventListener("DOMContentLoaded", function () {
     const videos = document.querySelectorAll('video');
     const loadingOverlay = document.getElementById('loadingOverlay');
-    const loadingMessage = document.getElementById('loadingMessage');
     let loadedVideos = 0;
-    let countdown = 5; // Starting value for the countdown
 
     // Function to check if all videos are loaded
     function checkAllVideosLoaded() {
@@ -30,18 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Update countdown every second
-    const countdownInterval = setInterval(function () {
-        countdown--; // Decrement the countdown
-        loadingMessage.textContent = `Loading... ${countdown}`; // Update the message
-
-        if (countdown <= 0) {
-            clearInterval(countdownInterval); // Stop the countdown interval
-            loadingOverlay.style.display = 'none'; // Hide the overlay
-            document.body.style.display = 'block'; // Show the body
-        }
-    }, 1000); // Update every second
-
     // Add event listener for each video
     videos.forEach(video => {
         video.addEventListener('canplaythrough', function () {
@@ -49,7 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
             checkAllVideosLoaded();
         });
     });
+
+    // Fallback: Show the body after a certain time (in case of issues)
+    setTimeout(function () {
+        loadingOverlay.style.display = 'none';
+        document.body.style.display = 'block';
+    }, 5000); 
 });
+
 
 //Make sure thetside
 document.addEventListener('click', (event) => {
