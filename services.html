@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="./footer.css">
     <link rel="stylesheet" href="./styles.css">
+    <script defer src="./services.js"></script>
     <script defer src="./app.js"></script>
     <script defer src="./footer.js"></script>
 
@@ -61,39 +62,127 @@
                 <p>
                     Medical audits review billing processes to ensure accuracy, compliance, and optimize revenue.
                 </p>
-                <a href="#medicalAuditing"><h1>Medical Audits</h1></a>
+                <a id="medicalAuditsLink" href="#servicesTitle">
+                    <h1>Medical Audits</h1>
+                </a>
             </div>
             <div class="servicesItems">
                 <p>We handle claims processing to ensure accurate payments and streamline your financial operations.</p>
-                <a href="#medicalBilling"><h1>Medical Billing</h1></a>
+                <a id="medicalBillingLink" href="#servicesTitle">
+                    <h1>Medical Billing</h1>
+                </a>
             </div>
             <div class="servicesItems">
                 <p>Medical credentialing involves verifying provider qualifications and maintaining compliance to
                     support seamless patient care.</p>
-                <a href="#medicalCredentialing"><h1>Medical Credentialing</h1></a>
+                <a id="medicalCredentialingLink" href="#servicesTitle">
+                    <h1>Medical Credentialing</h1>
+                </a>
             </div>
             <div class="servicesItems">
                 <p>
                     Medical coding translates patient information and treatments into standardized codes for accurate
                     billing and streamlined claims processing.</p>
-                <a href="#medicalCoding"><h1>Medical Coding</h1></a>
+                <a id="medicalCodingLink" href="#servicesTitle">
+                    <h1>Medical Coding</h1>
+                </a>
             </div>
             <div class="servicesItems">
                 <p>Performance tracking and data submission help providers meet quality standards and maximize
                     reimbursement opportunities.</p>
-                <a href="#mipsReporting"><h1>MIPS Reporting</h1></a>
+                <a id="mipsReportingLink" href="#servicesTitle">
+                    <h1>MIPS Reporting</h1>
+                </a>
+            </div>
+        </div>
+
+        <div class="item sidePaddings">
+            <div id="servicesTitle">
+                <h1>Services We Offer</h1>
+                <a href="./contact.html">Book A Consultation</a>
+            </div>
+            <div id="servicesInformation">
+                <div id="servicesInformationLeft">
+                    <h1 id="servicesInformationTitle">Medical Audits</h1>
+                    <p id="servicesInformationDescription">Medical audits ensure billing accuracy, compliance, and
+                        identify opportunities to improve
+                        revenue</p>
+                    <p id="servicesInformationMore">Our comprehensive medical audits ensure accuracy and compliance in
+                        your billing processes. By thoroughly reviewing financial records and identifying discrepancies,
+                        we help optimize your revenue cycle, reduce risks, and maintain regulatory compliance, providing
+                        you with peace of mind and greater financial efficiency.</p>
+                    <button id="learnMoreButton">Learn More</button>
+                </div>
+                <div id="servicesInformationRight">
+                    <p id="servicesPageNumber">1 / 5</p>
+                    <div id="servicesPageButtons">
+                        <button id="servicesPrevious"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-18.24 -18.24 68.48 68.48" fill="#ffffff" stroke="#ffffff">
+
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                                    <rect x="-18.24" y="-18.24" width="68.48" height="68.48" rx="34.24" fill="#000000"
+                                        strokewidth="0" />
+
+                                </g>
+
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                                <g id="SVGRepo_iconCarrier">
+                                    <defs>
+                                        <style>
+                                            .cls-1 {
+                                                fill: #ffffff;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <g data-name="arrow left" id="arrow_left">
+                                        <path class="cls-1"
+                                            d="M22,29.73a1,1,0,0,1-.71-.29L9.93,18.12a3,3,0,0,1,0-4.24L21.24,2.56A1,1,0,1,1,22.66,4L11.34,15.29a1,1,0,0,0,0,1.42L22.66,28a1,1,0,0,1,0,1.42A1,1,0,0,1,22,29.73Z" />
+                                    </g>
+                                </g>
+
+                            </svg></button>
+                        <button id="servicesNext"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-17.92 -17.92 67.84 67.84" fill="#ffffff" stroke="#ffffff">
+
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+
+                                    <rect x="-17.92" y="-17.92" width="67.84" height="67.84" rx="33.92" fill="#000000"
+                                        strokewidth="0" />
+
+                                </g>
+
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                                <g id="SVGRepo_iconCarrier">
+                                    <defs>
+                                        <style>
+                                            .cls-1 {
+                                                fill: #ffffff;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <g data-name="arrow right" id="arrow_right">
+                                        <path class="cls-1"
+                                            d="M10.05,29.73a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42L20.66,16.71a1,1,0,0,0,0-1.42L9.34,4a1,1,0,0,1,1.42-1.42L22.07,13.88a3,3,0,0,1,0,4.24L10.76,29.44A1,1,0,0,1,10.05,29.73Z" />
+                                    </g>
+                                </g>
+
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+            <div id="servicesButtons">
+                <button id="medicalAuditsContent">Medical Audits</button>
+                <button id="medicalBillingContent">Medical Billing</button>
+                <button id="medicalCredentialingContent">Medical Credentialing</button>
+                <button id="medicalCodingContent">Medical Coding</button>
+                <button id="mipsReportingContent">MIPS Reporting</button>
             </div>
         </div>
 
         <div class="item">
-            <div id="medicalAuditing">
-                <img src="./assets/servicesImage1.jpg" alt="Services Image One">
-                <h1 class="sidePaddings">Medical Auditing</h1>
-            </div>
-            <div id="medicalCredentialing">
-                <img src="./assets/servicesImage2.jpg" alt="Services Image One">
-                <h1 class="sidePaddings">Medical Credentialing</h1>
-            </div>
         </div>
 
     </div>

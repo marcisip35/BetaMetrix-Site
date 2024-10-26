@@ -134,7 +134,7 @@
 #mainContent .item:nth-child(2) p{
     font-size: 20px;
     width: 400px;
-    opacity: 0.2;
+    opacity: 0.4;
     font-weight: 300;
 }
 
@@ -150,27 +150,189 @@
 
 #mainContent .item:nth-child(3){
     width: 100%;
+    height: 900px;
+    background-image: url(./assets/servicesImage1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%; 
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#servicesTitle{
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#servicesTitle h1{
+    font-size: 60px;
+}
+
+#servicesTitle a {
+    width: 250px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    z-index: 1; /* Ensure the text stays on top */
+}
+
+#servicesTitle a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: width 0.4s ease; 
+}
+
+#servicesTitle a:hover::before {
+    width: 100%; 
+}
+
+#servicesTitle a:hover {
+    color: black;
+}
+
+#servicesInformation{
+    width: 100%;
+    height: 80%;
 
     display: flex;
     flex-direction: row;
 }
 
-#medicalAuditing, #medicalCredentialing{
+#servicesInformationLeft{
     width: 50%;
-    position: relative;
+    height: 70%;
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 50px;
 }
 
-#medicalAuditing h1, #medicalCredentialing h1{
-    font-weight: 200;
-    font-size: 60px;
-    top: 70%;
-    position: absolute;
+#servicesInformationDescription{
+    opacity: 0.8;
 }
 
+#servicesInformationMore{
+    display: none;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    opacity: 0.8;
+}
 
-#mainContent .item:nth-child(3) img{
+#learnMoreButton{
+    border: none;
+    border-bottom: 1px solid gray;
+    background: none;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    font-size: 16px;
+}
+
+#servicesInformationRight{
+    width: 50%;
+    height: 50%;
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#servicesPageNumber{
+    padding-right: 50px;
+}
+
+#servicesPageButtons{
+    padding-bottom: 100px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#servicesPageButtons button {
+    border-radius: 50%;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#servicesButtons{
     width: 100%;
-    height: 900px;
+    height: 10%;
 
-    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+#servicesButtons button{
+    border: none;
+    border-bottom: 1px solid gray;
+    background: none;
+    color: white;   
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+}
+
+#servicesButtons button:hover{
+    opacity: 0.5;
+}
+
+#mainContent .item:nth-child(3) {
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+    opacity: 1; /* Ensure full visibility */
+}
+
+/* Slide-in from the left animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the slide-in animation to the content */
+.slide-in-left {
+    animation: slideInFromLeft 1.2s ease-in-out forwards;
+}
+
+#mainContent .item:nth-child(4){
+    height: 1200px;
+}
+
+
+
