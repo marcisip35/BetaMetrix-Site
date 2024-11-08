@@ -20,6 +20,9 @@ const servicesPageNumber = document.querySelector("#servicesPageNumber");
 const servicesInformationMore = document.querySelector("#servicesInformationMore");
 const learnMoreButton = document.querySelector("#learnMoreButton");
 
+const servicesPrevious = document.querySelector("#servicesPrevious");
+const servicesNext = document.querySelector("#servicesNext");
+
 const imageUrls = [
     './assets/servicesImage1.png',
     './assets/servicesImage2.png',
@@ -35,6 +38,7 @@ imageUrls.forEach((url) => {
 });
 
 var serviceNum = 1;
+var servicesArray = [medicalAuditsFunction, medicalBillingFunction, medicalCredentialingFunction, medicalCodingFunction, mipsReportingFunction];
 
 medicalAuditsLink.addEventListener("click", () => {
     medicalAuditsFunction();
@@ -74,6 +78,13 @@ medicalCodingContent.addEventListener("click", () => {
 
 mipsReportingContent.addEventListener("click", () => {
     mipsReportingFunction();
+});
+
+servicesPrevious.addEventListener("click", () => {
+    servicesNextAndPreviousFunction(false)
+});
+servicesNext.addEventListener("click", () => {
+    servicesNextAndPreviousFunction(true)
 });
 
 function medicalAuditsFunction() {
@@ -139,6 +150,21 @@ function mipsReportingFunction() {
     servicesPageNumber.innerText = `${serviceNum} / 5`;
 }
 
+
+
+function servicesNextAndPreviousFunction(goNext) {
+    if (goNext) { // Next Button
+        if (serviceNum < 5) {
+            servicesArray[serviceNum]();
+        }
+    } else { // Previous Button
+        if (serviceNum > 1) {
+            serviceNum -= 2;
+            servicesArray[serviceNum]();
+        }
+    }
+}
+
 function restartAnimations() {
     // Remove the slide-in-left class from each element inside servicesInformationLeft
     servicesInformationTitle.classList.remove('slide-in-left');
@@ -161,7 +187,6 @@ function restartAnimations() {
     learnMoreButton.classList.add('slide-in-left');
     backgroundDisplay.classList.add('fade-in-bg');  // This is for the background fade
 }
-
 
 
 learnMoreButton.addEventListener("click", () => {
