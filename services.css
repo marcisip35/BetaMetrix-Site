@@ -334,7 +334,380 @@
 }
 
 #mainContent .item:nth-child(4){
-    height: 1200px;
+    width: 100%;
+    margin-bottom: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.metricItem{
+    height: 500px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.metricItem h1{
+    font-size: 60px;
+}
+
+.metricItem .left{
+    width: 50%;
+}
+
+.metricItem .right{
+    width: 50%;
+}
+
+.metricItem.other{
+    width: 100%;
+    height: 300px;
+    font-size: 14px;
+    background-color: goldenrod;
+}
+
+.metricItem.other svg{
+    height: 80px;
+}
+
+.metricItem.other h1{
+    font-size: 40px;
+}
+
+.trustItem{
+    height: 100%;
+    width: 33%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.statisticItem{
+    width: 33%;
+    font-size: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+@media(max-width: 1400px){
+    #mainContent .item:nth-child(1) h1{
+        font-size: 100px;
+        top: 150px;
+    }
+
+    #mainContent .item:nth-child(1) p{
+        font-size: 16px;
+    }
+
+    #mainContent .item:nth-child(1) a{
+        width: 200px;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    #servicesWeOfferLink{
+        left: 250px;
+    }
+
+    #askAQuestionLink{
+        left: 250px;
+    }
+
+    #mainContent .item:nth-child(2) h1{
+        font-size: 60px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        font-size: 16px;
+    }
+
+    #mainContent .item:nth-child(3){
+        height: 800px;
+    }
+
+    #servicesButtons button{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1100px){
+
+    .sidePaddings{
+        padding-right: 40px !important;
+    }
+
+    #mainContent .item:nth-child(1) h1{
+        top: 170px;
+        font-size: 70px;
+    }
+
+    #mainContent .item:nth-child(1) p{
+        font-size: 14px;
+    }
+
+    #servicesWeOfferLink, #askAQuestionLink{
+        left: 100px;
+    }
+    
+    #bookAConsultationLink,#companyMetricsLink{
+        right: 100px;
+    }
+
+    #mainContent .item:nth-child(2) h1{
+        font-size: 40px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        font-size: 14px;
+    }
+
+    #mainContent .item:nth-child(3){
+        height: 600px;
+    }
+
+    #servicesTitle h1{
+        font-size: 40px;
+    }
+
+    #servicesInformationTitle{
+        font-size: 24px;
+    }
+
+    #servicesTitle a{
+        width: 170px;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    #servicesButtons button, #learnMoreButton, #servicesInformationDescription{
+        font-size: 14px;
+    }
+
+    #servicesPageNumber{
+        font-size: 14px;
+    }
+
+    #servicesPageButtons button{
+        width: 40px;
+        height: 40px;
+    }
+
+    .metricItem img{
+        width: 400px;
+    }
+
+    .metricItem.other h1{
+        font-size: 30px;
+    }
+
+    .metricItem.other p{
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 900px){
+    .sidePaddings{
+        padding-left: 10px !important;
+        padding-right: 40px !important;
+    }
+
+    #mainContent{
+        gap: 50px;
+    }
+
+    #mainContent .item:nth-child(1){
+        margin-top: 200px;
+        padding-top: 50px;
+    }
+
+    #mainContent .item:nth-child(1) h1{
+        top: 15px;
+        font-size: 50px;
+    }
+
+    #mainContent .item:nth-child(1) p{
+        top: 100px;
+        width: 400px;
+        font-size: 12px;
+    }
+
+    #mainContent .item:nth-child(1) a{
+        width: 150px;
+        font-size: 12px;
+    }
+
+    #servicesWeOfferLink, #bookAConsultationLink{
+        top: 250px;
+        padding: 10px !important;
+    }
+
+    #askAQuestionLink, #companyMetricsLink{
+        top: 320px;
+        padding: 10px !important;
+    }
+
+    .servicesItems{
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+
+    #mainContent .item:nth-child(2) h1{
+        font-size: 24px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        font-size: 12px;
+    }
+
+    #mainContent .item:nth-child(3){
+        height: 350px;
+    }
+
+    #servicesInformationTitle{
+        font-size: 16px;
+    }
+
+    #servicesButtons button, #learnMoreButton, #servicesInformationDescription{
+        font-size: 11px;
+    }
+
+    #learnMoreButton{
+        width: 100px;
+    }
+
+    #servicesTitle h1{
+        font-size: 30px;
+    }
+
+    #servicesInformationLeft{
+        margin-top: 40px;
+        height: 40%;
+    }
+
+    #servicesPageNumber{
+        padding-right: 0px;
+    }
+
+    #servicesPageButtons{
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    #servicesPageButtons button{
+        width: 30px;
+        height: 30px;
+    }
+
+    #servicesButtons{
+        height: 15%;
+    }
+
+    #servicesButtons button{
+        font-size: 8px;
+    }
+
+    .metricItem{
+        height: 300px;
+    }
+
+    .metricItem h1{
+        font-size: 40px;
+    }
+
+    .metricItem img{
+        width: 200px;
+    }
+
+    .metricItem.other{
+        gap: 20px;
+    }
+
+    .metricItem.other svg{
+        height: 40px;
+    }
+
+    .metricItem.other h1{
+        font-size: 24px;
+    }
+
+    .metricItem.other p{
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 600px){
+    #mainContent .item:nth-child(1) h1{
+        top: 30px;
+        font-size: 30px;
+    }
+
+    #mainContent .item:nth-child(1) p{
+        font-size: 9px;
+        width: 300px;
+    }
+
+    #mainContent .item:nth-child(1) a{
+        width: 100px;
+        font-size: 8px;
+        padding: 5px;
+    }
+
+    #servicesWeOfferLink, #askAQuestionLink{
+        left: 40px;
+    }
+
+    #bookAConsultationLink, #companyMetricsLink{
+        right: 50px;
+    }
+
+    #mainContent .item:nth-child(2) p{
+        font-size: 9px;
+    }
+
+    #mainContent .item:nth-child(2) h1{
+        font-size: 16px;
+    }
+
+    #servicesTitle a{
+        width: 150px;
+        font-size: 9px;
+        padding: 5px;
+    }
+
+    #servicesButtons button{
+        font-size: 6px;
+    }
+
+    .metricItem h1{
+        font-size: 24px;
+    }
+
+    .metricItem.other{
+        height: 180px;
+    }
+
+    .metricItem.other svg{
+        height: 25px;
+    }
+
+    .metricItem.other h1{
+        font-size: 16px;
+    }
+
+    .metricItem.other p{
+        font-size: 9px;
+    }
 }
 
 
