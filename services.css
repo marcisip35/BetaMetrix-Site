@@ -743,6 +743,10 @@
         height: 300px;
     }
 
+    .stath1{
+        font-size: 24px !important;
+    }
+
     .metricItem h1 {
         font-size: 40px;
     }
@@ -790,7 +794,7 @@
     }
 
     .metricItem h1{
-        font-size: 24px !important;
+        font-size: 14px;
     }
 
     .metricItem:nth-child(5) p{
@@ -861,7 +865,7 @@
     }
 
     .metricItem.other h1 {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .metricItem.other p {
