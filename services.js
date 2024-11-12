@@ -150,8 +150,6 @@ function mipsReportingFunction() {
     servicesPageNumber.innerText = `${serviceNum} / 5`;
 }
 
-
-
 function servicesNextAndPreviousFunction(goNext) {
     if (goNext) { // Next Button
         if (serviceNum < 5) {

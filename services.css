@@ -636,7 +636,7 @@
 @media(max-width: 900px) {
     .sidePaddings {
         padding-left: 10px !important;
-        padding-right: 40px !important;
+        padding-right: 30px !important;
     }
 
     #mainContent {
@@ -657,6 +657,7 @@
         top: 100px;
         width: 400px;
         font-size: 12px;
+        opacity: 1;
     }
 
     #mainContent .item:nth-child(1) a {
@@ -789,7 +790,7 @@
     }
 
     .metricItem h1{
-        font-size: 14px !important;
+        font-size: 24px !important;
     }
 
     .metricItem:nth-child(5) p{
@@ -849,10 +850,6 @@
 
     #servicesButtons button {
         font-size: 6px;
-    }
-
-    .metricItem h1 {
-        font-size: 24px;
     }
 
     .metricItem.other {
