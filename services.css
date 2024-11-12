@@ -620,31 +620,17 @@
         font-size: 14px;
     }
 
+    .metricItem.other p {
+        font-size: 14px;
+    }
+
     .metricItem:nth-child(5) .left h1{
-        font-size: 20px;
-    }
-
-    .metricItem:nth-child(5) p{
-        font-size: 11px;
-    }
-
-    .statItemTitle{
-        height: 150px;
+        font-size: 24px;
     }
 
     .statItem{
-        height: 70px;
-        padding: 10px;
+        width: 250px;
     }
-
-    .metricItem h1{
-        font-size: 14px !important;
-    }
-
-    .metricItem:nth-child(5) p{
-        font-size: 9px;
-    }
-
 }
 
 @media(max-width: 900px) {
@@ -779,6 +765,45 @@
     .metricItem.other p {
         font-size: 11px;
     }
+
+    .metricItem:nth-child(5) .left h1{
+        font-size: 20px;
+    }
+
+    .metricItem:nth-child(5) p{
+        font-size: 11px;
+    }
+
+    .statItemTitle{
+        height: 150px;
+    }
+
+    .statItemTitle svg{
+        width: 100px;
+        height: 100px;
+    }
+
+    .statItem{
+        height: 70px;
+        padding: 10px;
+    }
+
+    .metricItem h1{
+        font-size: 14px !important;
+    }
+
+    .metricItem:nth-child(5) p{
+        font-size: 9px;
+    }
+
+    .metricItem:nth-child(5){
+        flex-direction: column;
+        margin-bottom: 250px;
+    }
+
+    .metricItem:nth-child(5) .left, .metricItem:nth-child(5) .right{
+        width: 100%;
+    }
 }
 
 @media(max-width: 600px) {
@@ -844,5 +869,13 @@
 
     .metricItem.other p {
         font-size: 9px;
+    }
+
+    .statItemLeftContainer svg{
+        width: 40px;
+    }
+
+    .statItem{
+        width: 220px;
     }
 }
