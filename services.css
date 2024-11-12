@@ -474,7 +474,7 @@
 }
 
 .statItem{
-    width: 500px;
+    width: 450px;
     height: 120px;
     backdrop-filter: invert(10%);
     border-radius: 6px;
@@ -523,6 +523,22 @@
 
     #servicesButtons button {
         font-size: 16px;
+    }
+
+    .metricItem:nth-child(5) .left h1{
+        font-size: 30px;
+    }
+
+    .statItemLeftContainer svg{
+        width: 70px;
+    }
+
+    .statItem{
+        width: 300px;
+    }
+
+    .statItem p{
+        font-size: 12px;
     }
 }
 
@@ -603,6 +619,32 @@
     .metricItem.other p {
         font-size: 14px;
     }
+
+    .metricItem:nth-child(5) .left h1{
+        font-size: 20px;
+    }
+
+    .metricItem:nth-child(5) p{
+        font-size: 11px;
+    }
+
+    .statItemTitle{
+        height: 150px;
+    }
+
+    .statItem{
+        height: 70px;
+        padding: 10px;
+    }
+
+    .metricItem h1{
+        font-size: 14px !important;
+    }
+
+    .metricItem:nth-child(5) p{
+        font-size: 9px;
+    }
+
 }
 
 @media(max-width: 900px) {
