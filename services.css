@@ -1,5 +1,5 @@
 /* Main Content */
-#mainContent{
+#mainContent {
     background-color: black;
     color: white;
 
@@ -9,12 +9,12 @@
     gap: 100px;
 }
 
-#mainContent a{
+#mainContent a {
     text-decoration: none;
     color: white;
 }
 
-#mainContent .item:nth-child(1){
+#mainContent .item:nth-child(1) {
     width: 100%;
     padding-top: 220px;
     margin-top: 300px;
@@ -28,7 +28,7 @@
     gap: 30px;
 }
 
-#mainContent .item:nth-child(1) h1{
+#mainContent .item:nth-child(1) h1 {
     font-size: 200px;
     font-weight: 400;
     text-align: center;
@@ -38,7 +38,7 @@
     z-index: 1;
 }
 
-#mainContent .item:nth-child(1) p{
+#mainContent .item:nth-child(1) p {
     width: 850px;
     text-align: center;
     line-height: 1.8;
@@ -60,7 +60,7 @@
     border: 1px solid white;
     padding: 20px;
     overflow: hidden;
-    color: white; 
+    color: white;
     transition: color 0.4s ease;
     opacity: 0.8;
 }
@@ -74,44 +74,44 @@
     height: 100%;
     background-color: white;
     z-index: -1;
-    transition: width 0.4s ease-in-out; 
+    transition: width 0.4s ease-in-out;
 }
 
 #mainContent .item:nth-child(1) a:hover::before {
-    width: 100%; 
+    width: 100%;
 }
 
 #mainContent .item:nth-child(1) a:hover {
     opacity: 1;
-    color: black; 
+    color: black;
 }
 
-#servicesWeOfferLink{
+#servicesWeOfferLink {
     top: 65%;
     left: 300px;
 }
 
-#bookAConsultationLink{
+#bookAConsultationLink {
     top: 65%;
     right: 190px;
 }
 
-#askAQuestionLink{
+#askAQuestionLink {
     top: 80%;
     left: 300px;
 }
 
-#companyMetricsLink{
+#companyMetricsLink {
     top: 80%;
     right: 190px;
 }
 
-#mainContent .item:nth-child(1) img{
+#mainContent .item:nth-child(1) img {
     width: 100%;
     opacity: 0.3;
 }
 
-#mainContent .item:nth-child(2){
+#mainContent .item:nth-child(2) {
     width: 100%;
 
     display: flex;
@@ -120,7 +120,7 @@
     gap: 50px;
 }
 
-.servicesItems{
+.servicesItems {
     width: 100%;
     border-top: 1px solid gray;
     padding-top: 100px;
@@ -131,36 +131,36 @@
     justify-content: space-between;
 }
 
-#mainContent .item:nth-child(2) p{
+#mainContent .item:nth-child(2) p {
     font-size: 20px;
     width: 400px;
     opacity: 0.4;
     font-weight: 300;
 }
 
-#mainContent .item:nth-child(2) h1{
+#mainContent .item:nth-child(2) h1 {
     font-size: 100px;
     font-weight: 100;
     cursor: pointer;
 }
 
-#mainContent .item:nth-child(2) h1:hover{
+#mainContent .item:nth-child(2) h1:hover {
     opacity: 0.5;
 }
 
-#mainContent .item:nth-child(3){
+#mainContent .item:nth-child(3) {
     width: 100%;
     height: 900px;
     background-image: url(./assets/servicesImage1.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%; 
-    
+    background-size: 100%;
+
     display: flex;
     flex-direction: column;
 }
 
-#servicesTitle{
+#servicesTitle {
     width: 100%;
     height: 10%;
 
@@ -170,7 +170,7 @@
     justify-content: space-between;
 }
 
-#servicesTitle h1{
+#servicesTitle h1 {
     font-size: 60px;
 }
 
@@ -184,7 +184,8 @@
     position: relative;
     overflow: hidden;
     transition: color 0.4s ease;
-    z-index: 1; /* Ensure the text stays on top */
+    z-index: 1;
+    /* Ensure the text stays on top */
 }
 
 #servicesTitle a::before {
@@ -196,18 +197,18 @@
     height: 100%;
     background-color: white;
     z-index: -1;
-    transition: width 0.4s ease; 
+    transition: width 0.4s ease;
 }
 
 #servicesTitle a:hover::before {
-    width: 100%; 
+    width: 100%;
 }
 
 #servicesTitle a:hover {
     color: black;
 }
 
-#servicesInformation{
+#servicesInformation {
     width: 100%;
     height: 80%;
 
@@ -215,7 +216,7 @@
     flex-direction: row;
 }
 
-#servicesInformationLeft{
+#servicesInformationLeft {
     width: 50%;
     height: 70%;
     margin-top: auto;
@@ -226,18 +227,18 @@
     gap: 50px;
 }
 
-#servicesInformationDescription{
+#servicesInformationDescription {
     opacity: 0.8;
 }
 
-#servicesInformationMore{
+#servicesInformationMore {
     display: none;
     letter-spacing: 0.5px;
     line-height: 30px;
     opacity: 0.8;
 }
 
-#learnMoreButton{
+#learnMoreButton {
     border: none;
     border-bottom: 1px solid gray;
     background: none;
@@ -248,7 +249,7 @@
     font-size: 16px;
 }
 
-#servicesInformationRight{
+#servicesInformationRight {
     width: 50%;
     height: 50%;
     margin-top: auto;
@@ -259,11 +260,11 @@
     align-items: flex-end;
 }
 
-#servicesPageNumber{
+#servicesPageNumber {
     padding-right: 50px;
 }
 
-#servicesPageButtons{
+#servicesPageButtons {
     padding-bottom: 100px;
 
     display: flex;
@@ -284,11 +285,12 @@
     justify-content: center;
 }
 
-#servicesPrevious, #servicesNext{
+#servicesPrevious,
+#servicesNext {
     background-color: black;
 }
 
-#servicesButtons{
+#servicesButtons {
     width: 100%;
     height: 10%;
 
@@ -297,23 +299,25 @@
     justify-content: space-between;
 }
 
-#servicesButtons button{
+#servicesButtons button {
     border: none;
     border-bottom: 1px solid gray;
     background: none;
-    color: white;   
+    color: white;
     cursor: pointer;
     font-size: 20px;
     height: 40px;
 }
 
-#servicesButtons button:hover{
+#servicesButtons button:hover {
     opacity: 0.5;
 }
 
 #mainContent .item:nth-child(3) {
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
-    opacity: 1; /* Ensure full visibility */
+    transition: opacity 0.5s ease-in-out;
+    /* Smooth transition for opacity */
+    opacity: 1;
+    /* Ensure full visibility */
 }
 
 /* Slide-in from the left animation */
@@ -322,6 +326,7 @@
         transform: translateX(-100%);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -333,7 +338,7 @@
     animation: slideInFromLeft 1.2s ease-in-out forwards;
 }
 
-#mainContent .item:nth-child(4){
+#mainContent .item:nth-child(4) {
     width: 100%;
     margin-bottom: 100px;
 
@@ -342,7 +347,7 @@
     gap: 50px;
 }
 
-.metricItem{
+.metricItem {
     height: 500px;
     width: 100%;
 
@@ -352,34 +357,34 @@
     gap: 50px;
 }
 
-.metricItem h1{
+.metricItem h1 {
     font-size: 60px;
 }
 
-.metricItem .left{
+.metricItem .left {
     width: 50%;
 }
 
-.metricItem .right{
+.metricItem .right {
     width: 50%;
 }
 
-.metricItem.other{
+.metricItem.other {
     width: 100%;
     height: 300px;
     font-size: 14px;
     background-color: goldenrod;
 }
 
-.metricItem.other svg{
+.metricItem.other svg {
     height: 80px;
 }
 
-.metricItem.other h1{
+.metricItem.other h1 {
     font-size: 40px;
 }
 
-.trustItem{
+.trustItem {
     height: 100%;
     width: 33%;
 
@@ -390,325 +395,412 @@
     text-align: center;
 }
 
-.statisticItem{
-    width: 33%;
-    font-size: 24px;
+.metricItem:nth-child(5) {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
+.metricItem:nth-child(5) .left,
+.metricItem:nth-child(5) .right {
+    border-radius: 16px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0));
+    /* Gradient background */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    color: #fff;
+    height: 100%;
+    width: 50%;
+}
+
+.metricItem:nth-child(5) .right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.metricItem:nth-child(5) .left{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.metricItem:nth-child(5) .left h1{
+    font-size: 40px;
+}
+
+.metricItem:nth-child(5) p{
+    text-align: center;
+}
+
+.statItemTitle{
+    width: 100%;
+    height: 250px;
+    border-radius: 16px;
+    border: 1px solid rgb(92, 92, 92);
+    padding: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statItemTitle svg{
+    width: 150px;
+    height: 150px;
+}
+
+.statItemTitle p{
+    width: 250px;
+}
+
+.statItemContainer, .statItemLeftContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 30px;
+}
+
+.statItemLeftContainer svg{
+    width: 100px;
+}
+
+.statItem{
+    width: 500px;
+    height: 120px;
+    backdrop-filter: invert(10%);
+    border-radius: 6px;
     padding: 20px;
 }
 
-@media(max-width: 1400px){
-    #mainContent .item:nth-child(1) h1{
+.statItem h1{
+    font-size: 20px;
+}
+
+@media(max-width: 1400px) {
+    #mainContent .item:nth-child(1) h1 {
         font-size: 100px;
         top: 150px;
     }
 
-    #mainContent .item:nth-child(1) p{
+    #mainContent .item:nth-child(1) p {
         font-size: 16px;
     }
 
-    #mainContent .item:nth-child(1) a{
+    #mainContent .item:nth-child(1) a {
         width: 200px;
         font-size: 16px;
         padding: 15px;
     }
 
-    #servicesWeOfferLink{
+    #servicesWeOfferLink {
         left: 250px;
     }
 
-    #askAQuestionLink{
+    #askAQuestionLink {
         left: 250px;
     }
 
-    #mainContent .item:nth-child(2) h1{
+    #mainContent .item:nth-child(2) h1 {
         font-size: 60px;
     }
 
-    #mainContent .item:nth-child(2) p{
+    #mainContent .item:nth-child(2) p {
         font-size: 16px;
     }
 
-    #mainContent .item:nth-child(3){
+    #mainContent .item:nth-child(3) {
         height: 800px;
     }
 
-    #servicesButtons button{
+    #servicesButtons button {
         font-size: 16px;
     }
 }
 
-@media(max-width: 1100px){
+@media(max-width: 1100px) {
 
-    .sidePaddings{
+    .sidePaddings {
         padding-right: 40px !important;
     }
 
-    #mainContent .item:nth-child(1) h1{
+    #mainContent .item:nth-child(1) h1 {
         top: 170px;
         font-size: 70px;
     }
 
-    #mainContent .item:nth-child(1) p{
+    #mainContent .item:nth-child(1) p {
         font-size: 14px;
     }
 
-    #servicesWeOfferLink, #askAQuestionLink{
+    #servicesWeOfferLink,
+    #askAQuestionLink {
         left: 100px;
     }
-    
-    #bookAConsultationLink,#companyMetricsLink{
+
+    #bookAConsultationLink,
+    #companyMetricsLink {
         right: 100px;
     }
 
-    #mainContent .item:nth-child(2) h1{
+    #mainContent .item:nth-child(2) h1 {
         font-size: 40px;
     }
 
-    #mainContent .item:nth-child(2) p{
+    #mainContent .item:nth-child(2) p {
         font-size: 14px;
     }
 
-    #mainContent .item:nth-child(3){
+    #mainContent .item:nth-child(3) {
         height: 600px;
     }
 
-    #servicesTitle h1{
+    #servicesTitle h1 {
         font-size: 40px;
     }
 
-    #servicesInformationTitle{
+    #servicesInformationTitle {
         font-size: 24px;
     }
 
-    #servicesTitle a{
+    #servicesTitle a {
         width: 170px;
         font-size: 12px;
         padding: 10px;
     }
 
-    #servicesButtons button, #learnMoreButton, #servicesInformationDescription{
+    #servicesButtons button,
+    #learnMoreButton,
+    #servicesInformationDescription {
         font-size: 14px;
     }
 
-    #servicesPageNumber{
+    #servicesPageNumber {
         font-size: 14px;
     }
 
-    #servicesPageButtons button{
+    #servicesPageButtons button {
         width: 40px;
         height: 40px;
     }
 
-    .metricItem img{
+    .metricItem img {
         width: 400px;
     }
 
-    .metricItem.other h1{
+    .metricItem.other h1 {
         font-size: 30px;
     }
 
-    .metricItem.other p{
+    .metricItem.other p {
         font-size: 14px;
     }
 }
 
-@media(max-width: 900px){
-    .sidePaddings{
+@media(max-width: 900px) {
+    .sidePaddings {
         padding-left: 10px !important;
         padding-right: 40px !important;
     }
 
-    #mainContent{
+    #mainContent {
         gap: 50px;
     }
 
-    #mainContent .item:nth-child(1){
+    #mainContent .item:nth-child(1) {
         margin-top: 200px;
         padding-top: 50px;
     }
 
-    #mainContent .item:nth-child(1) h1{
+    #mainContent .item:nth-child(1) h1 {
         top: 15px;
         font-size: 50px;
     }
 
-    #mainContent .item:nth-child(1) p{
+    #mainContent .item:nth-child(1) p {
         top: 100px;
         width: 400px;
         font-size: 12px;
     }
 
-    #mainContent .item:nth-child(1) a{
+    #mainContent .item:nth-child(1) a {
         width: 150px;
         font-size: 12px;
     }
 
-    #servicesWeOfferLink, #bookAConsultationLink{
+    #servicesWeOfferLink,
+    #bookAConsultationLink {
         top: 250px;
         padding: 10px !important;
     }
 
-    #askAQuestionLink, #companyMetricsLink{
+    #askAQuestionLink,
+    #companyMetricsLink {
         top: 320px;
         padding: 10px !important;
     }
 
-    .servicesItems{
+    .servicesItems {
         padding-top: 50px;
         padding-bottom: 0px;
     }
 
-    #mainContent .item:nth-child(2) h1{
+    #mainContent .item:nth-child(2) h1 {
         font-size: 24px;
     }
 
-    #mainContent .item:nth-child(2) p{
+    #mainContent .item:nth-child(2) p {
         font-size: 12px;
     }
 
-    #mainContent .item:nth-child(3){
+    #mainContent .item:nth-child(3) {
         height: 350px;
     }
 
-    #servicesInformationTitle{
+    #servicesInformationTitle {
         font-size: 16px;
     }
 
-    #servicesButtons button, #learnMoreButton, #servicesInformationDescription{
+    #servicesButtons button,
+    #learnMoreButton,
+    #servicesInformationDescription {
         font-size: 11px;
     }
 
-    #learnMoreButton{
+    #learnMoreButton {
         width: 100px;
     }
 
-    #servicesTitle h1{
+    #servicesTitle h1 {
         font-size: 30px;
     }
 
-    #servicesInformationLeft{
+    #servicesInformationLeft {
         margin-top: 40px;
         height: 40%;
     }
 
-    #servicesPageNumber{
+    #servicesPageNumber {
         padding-right: 0px;
     }
 
-    #servicesPageButtons{
+    #servicesPageButtons {
         margin-top: 20px;
         gap: 10px;
     }
 
-    #servicesPageButtons button{
+    #servicesPageButtons button {
         width: 30px;
         height: 30px;
     }
 
-    #servicesButtons{
+    #servicesButtons {
         height: 15%;
     }
 
-    #servicesButtons button{
+    #servicesButtons button {
         font-size: 8px;
     }
 
-    .metricItem{
+    .metricItem {
         height: 300px;
     }
 
-    .metricItem h1{
+    .metricItem h1 {
         font-size: 40px;
     }
 
-    .metricItem img{
+    .metricItem img {
         width: 200px;
     }
 
-    .metricItem.other{
+    .metricItem.other {
         gap: 20px;
     }
 
-    .metricItem.other svg{
+    .metricItem.other svg {
         height: 40px;
     }
 
-    .metricItem.other h1{
+    .metricItem.other h1 {
         font-size: 24px;
     }
 
-    .metricItem.other p{
+    .metricItem.other p {
         font-size: 11px;
     }
 }
 
-@media(max-width: 600px){
-    #mainContent .item:nth-child(1) h1{
+@media(max-width: 600px) {
+    #mainContent .item:nth-child(1) h1 {
         top: 30px;
         font-size: 30px;
     }
 
-    #mainContent .item:nth-child(1) p{
+    #mainContent .item:nth-child(1) p {
         font-size: 9px;
         width: 300px;
     }
 
-    #mainContent .item:nth-child(1) a{
+    #mainContent .item:nth-child(1) a {
         width: 100px;
         font-size: 8px;
         padding: 5px;
     }
 
-    #servicesWeOfferLink, #askAQuestionLink{
+    #servicesWeOfferLink,
+    #askAQuestionLink {
         left: 40px;
     }
 
-    #bookAConsultationLink, #companyMetricsLink{
+    #bookAConsultationLink,
+    #companyMetricsLink {
         right: 50px;
     }
 
-    #mainContent .item:nth-child(2) p{
+    #mainContent .item:nth-child(2) p {
         font-size: 9px;
     }
 
-    #mainContent .item:nth-child(2) h1{
+    #mainContent .item:nth-child(2) h1 {
         font-size: 16px;
     }
 
-    #servicesTitle a{
+    #servicesTitle a {
         width: 150px;
         font-size: 9px;
         padding: 5px;
     }
 
-    #servicesButtons button{
+    #servicesButtons button {
         font-size: 6px;
     }
 
-    .metricItem h1{
+    .metricItem h1 {
         font-size: 24px;
     }
 
-    .metricItem.other{
+    .metricItem.other {
         height: 180px;
     }
 
-    .metricItem.other svg{
+    .metricItem.other svg {
         height: 25px;
     }
 
-    .metricItem.other h1{
+    .metricItem.other h1 {
         font-size: 16px;
     }
 
-    .metricItem.other p{
+    .metricItem.other p {
         font-size: 9px;
     }
 }
-
-
-
