@@ -389,13 +389,4 @@ function questionFormSendMail(event) {
         });
 }
 
-// Play the video after the first user interaction (click or keypress)
-const video = document.getElementById('softwareVideo');
-
-document.addEventListener('click', () => {
-    if (video.paused) {
-        video.play();
-    }
-}, { once: true }); // Only listen for the first interaction
-
 
