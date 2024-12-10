@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --mainColor: black;
+    --secondaryColor: rgb(80, 80, 80);
+    --hoverColor: rgb(75, 49, 75);
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100vw; /* Ensure body content stays within the viewport width */
+}
+
+body.no-scroll {
+    overflow: hidden;
+    padding-right: 17px;
+    /* Add padding equal to the scroll bar width */
+}
+

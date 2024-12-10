@@ -1,0 +1,84 @@
+.sidePaddings{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+/* Header */
+header {
+    width: 100vw;
+    height: 100vh; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    animation: shrinkHeader 1s ease-in-out 0.5s forwards; /* Delay by 1.5s, duration 1s */
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#headerLogo {
+    font-size: 4vw;
+    z-index: 1;
+}
+
+#headerLogo a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    padding-top: 50px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+nav a {
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4vw;
+}
+
+nav a:hover{
+    opacity: 0.6;
+}
+
+#pageLogo{
+    color: white;
+    opacity: 0.6;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+/* Keyframe animation */
+@keyframes shrinkHeader {
+    from {
+        height: 100vh;
+    }
+    to {
+        height: 300px;
+    }
+}
+
+@media (max-width: 900px){
+    .sidePaddings{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    nav a{
+        font-size: 14px;
+    }
+}
